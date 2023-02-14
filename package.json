@@ -1,0 +1,31 @@
+{
+  "name": "adopt-me-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -e hbs,css,js app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidypaloma/adopt-me-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidypaloma/adopt-me-app/issues"
+  },
+  "homepage": "https://github.com/davidypaloma/adopt-me-app#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.9.1",
+    "morgan": "^1.10.0"
+  }
+}
