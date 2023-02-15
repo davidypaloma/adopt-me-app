@@ -4,6 +4,7 @@ const logger = require('morgan')
 
 require('dotenv/config')
 require('./config/hbs.config')
+require('./config/db.config')
 
 const app = express();
 
@@ -12,6 +13,10 @@ app.use(logger('dev'))
 
 const router = require('./config/routes.config')
 app.use('/', router)
+
+app.use((err, req, res, next) => {
+  console.error(err)
+})
 
 app.set('views', `${__dirname}/views`)
 

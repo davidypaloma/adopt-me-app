@@ -19,8 +19,8 @@ const protSocietySchema = new Schema({
         trim: true,
         lowercase: true,
         unique: true,
-        required: 'La dirección de email es obligatoria',
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Por favor, introduce un e-mail válido']
+        required: "La dirección de email es obligatoria",
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Por favor, introduce un e-mail válido"]
     },
     phone: {
         type: String,
@@ -35,5 +35,5 @@ const protSocietySchema = new Schema({
     }
 })
 
-const ProtSociety = mongoose.model('Drone', protSocietySchema)
+const ProtSociety = mongoose.model('ProtSociety', protSocietySchema)
 module.exports = ProtSociety

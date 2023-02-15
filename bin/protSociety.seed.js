@@ -1,5 +1,7 @@
 require('../config/db.config')
-const { mongo, default: mongoose } = require('mongoose')
+
+// const { mongo, default: mongoose } = require('mongoose') ??? Esto lo hemos puesto aposta?
+const mongoose = require('mongoose')
 const ProtSociety = require('../models/protSociety.model')
 
 const protSocieties = [
@@ -17,3 +19,4 @@ ProtSociety.create(protSocieties)
   .then((protSocieties) => console.log(protSocieties))
   .catch((err) => console.error(`An error has occurred ${err}`))
   .finally(() => mongoose.connection.close())
+

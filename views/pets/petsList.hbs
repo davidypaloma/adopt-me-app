@@ -1,0 +1,20 @@
+Hi, I'm the list!
+
+<a href="/profile">Profile</a>
+
+<div>
+  {{#each pets as |pet|}}
+    <a href="/pets/{{pet.id}}"><h2>{{pet.name}}</h2></a>
+    <img src="{{pet.image}}" />
+    <ul>
+      <li>age-{{pet.age}}</li>
+      <li>sex-{{pet.sex}}</li>
+      <li>breed-{{pet.breed}}</li>
+      <li>energieLevel-{{pet.energieLevel}}</li>
+      <li>healthStatus-{{pet.healthStatus}}</li>
+      <li>isAdopted-{{pet.isAdopted}}</li>
+      <li>description-{{pet.description}}</li>
+      <li>protSociety-{{pet.protSociety}}</li>
+    </ul>
+  {{/each}}
+</div>
