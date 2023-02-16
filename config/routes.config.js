@@ -12,7 +12,7 @@ router.get('/login', protSocietyController.login)
 router.get('/profile', protSocietyController.profile)
 
 router.get('/pets', petsController.list)
-router.get('/pets/:id', petsController.detail)
+router.get('/pets/:name/:id', petsController.detail)
 
 
 module.exports = router
