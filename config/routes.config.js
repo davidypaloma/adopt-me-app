@@ -9,10 +9,12 @@ const router = express.Router()
 router.get('/', commonController.home)
 
 router.get('/login', protSocietyController.login)
-router.get('/profile', protSocietyController.profile)
+router.get('/profile/:id', protSocietyController.profile)
 
 router.get('/pets', petsController.list)
 router.get('/pets/:name/:id', petsController.detail)
+router.get('/pets/new', petsController.create)
+router.post('/pets', petsController.doCreate)
 
 
 module.exports = router

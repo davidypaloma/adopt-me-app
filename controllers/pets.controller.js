@@ -15,3 +15,15 @@ module.exports.detail = ((req, res, next) => {
     })
     .catch(next)
 })
+
+module.exports.create = ((req, res, next) => {
+  res.render('pets/newPet')
+})
+
+module.exports.doCreate = ((req, res, next) =>{
+  Pet.create(req.body)
+    .then((pet) => {
+        res.redirect(`/pets/${pet.name}/${pet.id}`)
+    })
+    .catch(next)
+})

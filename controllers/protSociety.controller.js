@@ -5,5 +5,11 @@ module.exports.login = (req, res, next) => {
 }
 
 module.exports.profile = (req, res, next) => {
-    res.render('protSociety/profile')
+    ProtSociety.findById(req.params.id)
+    .then((protsociety) => {
+    res.locals = protsociety.id
+        console.log(protsociety)
+          res.render('protSociety/profile', { protsociety })
+    })
+    .catch(next)
 }

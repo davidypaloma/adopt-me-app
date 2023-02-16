@@ -31,7 +31,7 @@ const petSchema = new Schema({
     required: [true, "El estado de salud de la mascota es obligatorio"]
   },
   isAdopted: {
-    type: Boolean,
+    type: String,
     required: [true, "El status de adopción de la mascota es obligatorio"]
   },
   description: {
