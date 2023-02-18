@@ -44,28 +44,19 @@ const protSocieties = [
   }
 ]
 
-// ProtSociety.create(protSocieties)
-//   .then((protSocieties) =>
-//     Pet.create(pets))
-//   .catch((err) => console.error(`An error has occurred ${err}`))
-//   .finally(() => mongoose.connection.close())
-
-// Pet.create(pets)
-//   .then((pets) => console.log(pets))
-//   .catch((err) => console.error(`An error has occurred ${err}`))
-//   .finally(() => mongoose.connection.close())
-
-
-ProtSociety.create(protSocieties)
+Pet.deleteMany()
+  .then(() => ProtSociety.deleteMany())
+  .then(() => ProtSociety.create(protSocieties))
   .then((protSocieties) => {
     protSocieties.forEach((protSociety) => {
+      pets.forEach((pet) => {
+        pet.protSociety = protSociety.id
+      })
       Pet.create(pets)
         .then((pets) => {
-          pets.forEach((pet) => {
-            pet.protSociety = protSociety.id
-          })
+          console.log("pets created");
         })
     })
   })
   .catch((err) => console.error(`An error has occurred ${err}`))
-  .finally(() => mongoose.connection.close())
+  // .finally(() => mongoose.connection.close())

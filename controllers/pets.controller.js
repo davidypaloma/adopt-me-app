@@ -1,8 +1,33 @@
 const Pet = require('../models/pets.model')
 
 module.exports.list = ((req, res, next) => {
-  Pet.find()
+  const criteria = {};
+
+
+  if (req.query.name) {
+    criteria.name = new RegExp(req.query.name)
+  }
+
+  if (req.query.class) {
+    criteria.class = new RegExp(req.query.class)
+  }
+
+  if (req.query.sex) {
+    criteria.sex = req.query.sex
+  }
+
+  if (req.query.breed) {
+    criteria.breed = req.query.breed
+  }
+
+  // if (req.query.location) {
+  //   criteria.location = req.query.location
+  // }
+
+  Pet.find(criteria)
+    .populate('protSociety')
     .then((pets) => {
+      console.log(criteria)
       res.render('pets/petsList', { pets })
     })
     .catch(next)
@@ -24,7 +49,7 @@ module.exports.create = ((req, res, next) => {
 
 module.exports.doCreate = ((req, res, next) => {
   // req.body.protSociety = req.user.id
-  Pet.create(req.body) 
+  Pet.create(req.body)
     .then((pet) => {
       res.redirect(`/pets/${pet.id}`)
     })

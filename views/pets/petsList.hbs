@@ -8,20 +8,54 @@
 
 <a href="/profile/63efc812e34d959072f6b84f">Profile</a>
 
+
+
+
+
+
+<form>
+  <input value="{{query.name}}" type="text" name="name" id="" placeholder="Nombre">
+</form>
+
+<form>
+  <input value="{{query.class}}" type="text" name="class" id="" placeholder="Tipo de animal">
+</form>
+
+<form>
+  <input value="{{query.sex}}" type="text" name="sex" id="" placeholder="Sexo">
+</form>
+
+<form>
+  <input value="{{query.breed}}" type="text" name="breed" id="" placeholder="Raza">
+</form>
+
+{{!-- <form>
+  <input value="{{query.location}}" type="text" name="location" id="" placeholder="Localización">
+</form> --}}
+
+
+
+
+
+
+
+
+
 <div>
   {{#each pets as |pet|}}
     <a href="/pets/{{pet.id}}"><h2>{{pet.name}}</h2></a>
-    <img src="{{pet.image}}" />
+    <img width="550px" src="{{pet.image}}" />
     <ul>
-      <li>class-{{pet.class}}</li>
-      <li>age-{{pet.age}}</li>
-      <li>sex-{{pet.sex}}</li>
-      <li>breed-{{pet.breed}}</li>
-      <li>energieLevel-{{pet.energieLevel}}</li>
-      <li>healthStatus-{{pet.healthStatus}}</li>
+      <li>class: {{pet.class}}</li>
+      <li>age: {{pet.age}}</li>
+      <li>sex: {{pet.sex}}</li>
+      <li>breed: {{pet.breed}}</li>
+      <li>energieLevel: {{pet.energieLevel}}</li>
+      <li>healthStatus: {{pet.healthStatus}}</li>
       <li>isAdopted-{{pet.isAdopted}}</li>
-      <li>description-{{pet.description}}</li>
-      <li>protSociety-{{protSociety.name}}</li>
+      <li>description: {{pet.description}}</li>
+      <li>protSociety: {{pet.protSociety.name}}</li>
+      <li>Location: {{pet.protSociety.location}}</li>
     </ul>
 
 {{!-- <button onclick="javascript:location.href='{{protSociety.website}}'" type="button">NOMBRE DE LA PROTECTORA</button> --}}

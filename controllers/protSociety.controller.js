@@ -4,6 +4,17 @@ module.exports.login = (req, res, next) => {
     res.render('protSociety/login')
 }
 
+module.exports.create = (req, res, next) => {
+    res.render('protSociety/newProtSociety')
+}
+
+module.exports.doCreate = (req, res, next) => {
+    ProtSociety.create(req.body)
+    .then((protSociety) => {
+        res.redirect(`/profile/${protSociety.id}`)
+    })
+}
+
 module.exports.profile = (req, res, next) => {
     ProtSociety.findById(req.params.id)
         .then((protSociety) => {

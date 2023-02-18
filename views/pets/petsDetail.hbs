@@ -4,6 +4,7 @@
 <h3>{{ pet.age }}</h3>
 <h3>{{ pet.sex }}</h3>
 <h3>{{ pet.breed }}</h3>
+<h3>{{pet.protSociety.location}}</h3>
 <h3>{{ pet.energyLevel }}</h3>
 {{#if pet.isAdopted}}
     <img width="50px" src="https://cdn-icons-png.flaticon.com/512/8206/8206844.png" alt="">
@@ -13,7 +14,6 @@
     <h3>Sigue buscando una familia.</h3>
 {{/if}}
 <h4>{{pet.description}}</h4>
-<h4>{{pet.protSociety}}</h4>
 
 <form>
  <input type="button" value="Go back!" onclick="history.back()">

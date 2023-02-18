@@ -8,6 +8,8 @@ const router = express.Router()
 
 router.get('/', commonController.home)
 
+router.get('/protSociety/new', protSocietyController.create)
+router.post('/protSociety', protSocietyController.doCreate)
 router.get('/login', protSocietyController.login)
 router.get('/profile/:id', protSocietyController.profile)
 router.get('/profile/:id/edit', protSocietyController.edit)
