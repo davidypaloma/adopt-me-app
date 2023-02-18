@@ -13,6 +13,11 @@
                 <input name="image" type="text" id="image">
             </div>
 
+             <div>
+                <label for="class">Pet class</label>
+                <input name="class" type="text" id="class">
+            </div>
+
             <div>
                 <label for="age">Pet age</label>
                 <input name="age" type="text" id="age">
@@ -29,8 +34,8 @@
             </div>
 
             <div>
-                <label for="energieLevel">Pet energy</label>
-                <input name="energieLevel" type="text" id="energieLevel">
+                <label for="energyLevel">Pet energy</label>
+                <input name="energyLevel" type="text" id="energyLevel">
             </div>
 
             <div>
@@ -40,19 +45,23 @@
 
             <div>
                 <label for="isAdopted">Estado de adopción</label>
-                <input name="isAdopted" type="text" id="image">
+                <input name="isAdopted" type="checkbox" id="isAdopted">
             </div>
 
             <div>
                 <label for="description">Añade una descripción</label>
                 <input name="description" type="text" id="description">
             </div>
-
+{{!-- 
             <div>
                 <label for="protSociety">Nombre de la protectora</label>
-                <input name="protSociety" type="text" id="image">
-            </div>
+                <input name="protSociety" type="text" id="protSociety">
+            </div> --}}
 
             <button type="submit">Nuevo</button>
         </form>
     </div>
+
+    <form>
+ <input type="button" value="Go back!" onclick="history.back()">
+</form>

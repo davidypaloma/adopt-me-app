@@ -1,0 +1,41 @@
+<h1>{{protSociety.name}}</h1>
+
+<div>
+  <form action="/profile/{{protSociety.id}}" method="POST">
+    <div>
+      <label for="name">Nombre de la protectora</label>
+      <input name="name" type="text" id="name" value="{{protSociety.name}}"/>
+    </div>
+
+    <div>
+      <label for="image">Imagen de perfil</label>
+      <input name="image" type="text" id="image" value="{{protSociety.image}}"/>
+    </div>
+
+    <div>
+      <label for="email">Email de la protectora</label>
+      <input name="email" type="email" id="email" value="{{protSociety.email}}"/>
+    </div>
+
+    <div>
+      <label for="location">Localización</label>
+      <input name="location" type="text" id="location" value="{{protSociety.location}}"/>
+    </div>
+
+    <div>
+      <label for="website">Página Web</label>
+      <input name="website" type="text" id="website" value="{{protSociety.website}}"/>
+    </div>
+
+    <div>
+      <label for="password">Contraseña</label>
+      <input name="password" type="password" id="password" value="{{protSociety.password}}"/>
+    </div>
+
+    <button type="submit">Editar</button>
+  </form>
+</div>
+
+<form>
+ <input type="button" value="Go back!" onclick="history.back()">
+</form>

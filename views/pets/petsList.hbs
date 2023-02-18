@@ -1,12 +1,19 @@
-Hi, I'm the list!
+<h1>Todos nuestros peludos</h1>
 
-<a href="/profile/{{res.locals.id}}">Profile</a>
+<form>
+ <input type="button" value="Go back!" onclick="history.back()">
+</form>
+
+<button onclick="javascript:location.href='/pets/new'" type="button">Nuevo peludo</button>
+
+<a href="/profile/63efc812e34d959072f6b84f">Profile</a>
 
 <div>
   {{#each pets as |pet|}}
-    <a href="/pets/{{pet.name}}/{{pet.id}}"><h2>{{pet.name}}</h2></a>
+    <a href="/pets/{{pet.id}}"><h2>{{pet.name}}</h2></a>
     <img src="{{pet.image}}" />
     <ul>
+      <li>class-{{pet.class}}</li>
       <li>age-{{pet.age}}</li>
       <li>sex-{{pet.sex}}</li>
       <li>breed-{{pet.breed}}</li>
@@ -14,7 +21,10 @@ Hi, I'm the list!
       <li>healthStatus-{{pet.healthStatus}}</li>
       <li>isAdopted-{{pet.isAdopted}}</li>
       <li>description-{{pet.description}}</li>
-      <li>protSociety-{{pet.protSociety}}</li>
+      <li>protSociety-{{protSociety.name}}</li>
     </ul>
+
+{{!-- <button onclick="javascript:location.href='{{protSociety.website}}'" type="button">NOMBRE DE LA PROTECTORA</button> --}}
+
   {{/each}}
 </div>

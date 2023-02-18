@@ -9,7 +9,7 @@ require('./config/db.config')
 const app = express();
 
 //Middleware
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: false}))
 app.use(logger('dev'))
 
 const router = require('./config/routes.config')

@@ -10,6 +10,9 @@ const petSchema = new Schema({
   image: {
     type: String,
   },
+  class: {
+    type: String,
+  },
   age: {
     type: String,
     required: [true, "La edad de la mascota es obligatoria"]
@@ -22,7 +25,7 @@ const petSchema = new Schema({
     type: String,
     required: [true, "La raza de la mascota es obligatorio"]
   },
-  energieLevel: {
+  energyLevel: {
     type: String,
     required: [true, "El nivel de energía de la mascota es obligatorio"]
   },
@@ -31,16 +34,16 @@ const petSchema = new Schema({
     required: [true, "El estado de salud de la mascota es obligatorio"]
   },
   isAdopted: {
-    type: String,
-    required: [true, "El status de adopción de la mascota es obligatorio"]
+    type: Boolean,
+    default: false
   },
   description: {
     type: String,
     required: [true, "La descripción de la mascota es obligatoria"]
   },
   protSociety: {
-    type: String,
-    required: [true, "El nombre de la protectora de la mascota es obligatorio"]
+    type: Schema.Types.ObjectId,
+    ref: 'ProtSociety'
   }
 })
 

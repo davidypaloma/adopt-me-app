@@ -1,0 +1,79 @@
+<h1>{{pet.name}}</h1>
+
+<div>
+  <form action="/pets/{{pet.id}}" method="POST">
+    <div>
+      <label for="name">Nombre</label>
+      <input name="name" type="text" id="name" value="{{pet.name}}" />
+    </div>
+
+    <div>
+      <label for="image">Imagen</label>
+      <input name="image" type="text" id="image" value="{{pet.image}}" />
+    </div>
+
+
+    <div>
+      <label for="class">Clase</label>
+      <input name="class" type="text" id="class" value="{{pet.class}}" />
+    </div>
+
+    <div>
+      <label for="age">Edad</label>
+      <input name="age" type="text" id="age" value="{{pet.age}}" />
+    </div>
+
+    <div>
+      <label for="sex">Sexo</label>
+      <input name="sex" type="text" id="sex" value="{{pet.sex}}" />
+    </div>
+
+    <div>
+      <label for="breed">Raza</label>
+      <input name="breed" type="text" id="breed" value="{{pet.breed}}" />
+    </div>
+
+    <div>
+      <label for="energyLevel">Nivel de energia</label>
+      <input
+        name="energyLevel"
+        type="text"
+        id="energyLevel"
+        value="{{pet.energyLevel}}"
+      />
+    </div>
+
+    <div>
+      <label for="isAdopted">Estado de adopción</label>
+      <input
+        name="isAdopted"
+        type="text"
+        id="isAdopted"
+        value="{{pet.isAdopted}}"
+      />
+    </div>
+
+    <div>
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description" rows="5" cols="22">
+        {{pet.description}}
+      </textarea>
+    </div>
+
+    <div>
+      <label for="protSociety">Protectora</label>
+      <input
+        name="protSociety"
+        type="text"
+        id="protSociety"
+        value="{{pet.protSociety}}"
+      />
+    </div>
+
+    <button type="submit">Editar</button>
+  </form>
+</div>
+
+<form>
+  <input type="button" value="Go back!" onclick="history.back()" />
+</form>
