@@ -10,7 +10,10 @@ router.get('/', commonController.home)
 
 router.get('/protSociety/new', protSocietyController.create)
 router.post('/protSociety', protSocietyController.doCreate)
+
 router.get('/login', protSocietyController.login)
+router.post('/login', protSocietyController.doLogin)
+
 router.get('/profile/:id', protSocietyController.profile)
 router.get('/profile/:id/edit', protSocietyController.edit)
 router.post('/profile/:id', protSocietyController.doEdit)

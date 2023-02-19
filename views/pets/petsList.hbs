@@ -1,44 +1,58 @@
 <h1>Todos nuestros peludos</h1>
 
 <form>
- <input type="button" value="Go back!" onclick="history.back()">
+  <input type="button" value="Go back!" onclick="history.back()" />
 </form>
 
-<button onclick="javascript:location.href='/pets/new'" type="button">Nuevo peludo</button>
+<button onclick="javascript:location.href='/pets/new'" type="button">Nuevo
+  peludo</button>
 
-<a href="/profile/63efc812e34d959072f6b84f">Profile</a>
-
-
-
-
-
+<a href="/profile/63f13006ecebcc494dd2ae33">Profile</a>
 
 <form>
-  <input value="{{query.name}}" type="text" name="name" id="" placeholder="Nombre">
+  <input
+    value="{{query.name}}"
+    type="text"
+    name="name"
+    id=""
+    placeholder="Nombre"
+  />
+  <button type="submit">search</button>
+
+  <input
+    value="{{query.class}}"
+    type="text"
+    name="class"
+    id=""
+    placeholder="Tipo de animal"
+  />
+  <button type="submit">search</button>
+
+  <input
+    value="{{query.sex}}"
+    type="text"
+    name="sex"
+    id=""
+    placeholder="Sexo"
+  />
+  <button type="submit">search</button>
+
+  <input
+    value="{{query.breed}}"
+    type="text"
+    name="breed"
+    id=""
+    placeholder="Raza"
+  />
+  <button type="submit">search</button>
+  {{!-- <input
+    value="{{query.location}}"
+    type="text"
+    name="location"
+    id=""
+    placeholder="Localización"
+  /> <button type="submit">search</button> --}}
 </form>
-
-<form>
-  <input value="{{query.class}}" type="text" name="class" id="" placeholder="Tipo de animal">
-</form>
-
-<form>
-  <input value="{{query.sex}}" type="text" name="sex" id="" placeholder="Sexo">
-</form>
-
-<form>
-  <input value="{{query.breed}}" type="text" name="breed" id="" placeholder="Raza">
-</form>
-
-{{!-- <form>
-  <input value="{{query.location}}" type="text" name="location" id="" placeholder="Localización">
-</form> --}}
-
-
-
-
-
-
-
 
 
 <div>
@@ -56,9 +70,10 @@
       <li>description: {{pet.description}}</li>
       <li>protSociety: {{pet.protSociety.name}}</li>
       <li>Location: {{pet.protSociety.location}}</li>
+      {{!-- <li>Id: {{pet.protSociety.id}}</li> --}}
     </ul>
 
-{{!-- <button onclick="javascript:location.href='{{protSociety.website}}'" type="button">NOMBRE DE LA PROTECTORA</button> --}}
+    {{!-- <button onclick="javascript:location.href='{{pet.protSociety.website}}'" type="button">NOMBRE DE LA PROTECTORA</button> --}}
 
   {{/each}}
 </div>

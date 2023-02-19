@@ -1,8 +1,14 @@
 const Pet = require('../models/pets.model')
+const mongoose = require('mongoose')
 
 module.exports.list = ((req, res, next) => {
-  const criteria = {};
+  // const sessionId = req.headers.cookie.split('=')[1] //sessionId=xxxx
 
+  // if (!sessions[sessionId]) {
+  //   //error
+  // }
+
+  const criteria = {};
 
   if (req.query.name) {
     criteria.name = new RegExp(req.query.name)
@@ -21,7 +27,7 @@ module.exports.list = ((req, res, next) => {
   }
 
   // if (req.query.location) {
-  //   criteria.location = req.query.location
+  //   criteria.protSociety = {location: req.query.location}
   // }
 
   Pet.find(criteria)

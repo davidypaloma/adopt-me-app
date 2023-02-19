@@ -23,6 +23,6 @@ app.set('views', `${__dirname}/views`)
 
 app.set('view engine', 'hbs')
 
-//Port acces
+//Port access
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`The dog is barking at port ${port} 🐶 guau!`));

@@ -1,11 +1,12 @@
 {
   "name": "adopt-me-app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon -e hbs,css,js app.js"
+    "dev": "nodemon -e hbs,css,js app.js",
+    "seed": "node bin/pet.seed.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
