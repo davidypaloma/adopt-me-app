@@ -33,7 +33,6 @@ module.exports.list = ((req, res, next) => {
   Pet.find(criteria)
     .populate('protSociety')
     .then((pets) => {
-      console.log(criteria)
       res.render('pets/petsList', { pets })
     })
     .catch(next)

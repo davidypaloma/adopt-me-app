@@ -33,11 +33,12 @@ module.exports.doLogin = (req, res, next) => {
         .then(ok => {
           if (ok) {
             //Esto irá con una librería de express-session
-            const sessionId = (Math.random() + 1).toString(36).substring(7)
-            sessions[sessionId] = protSociety.id
+            req.session.protSocietyId = protSociety.id
+            // sessions[sessionId] = protSociety.id
+
             ///
-            
-            res.set('Set-Cookie', `sessionid=${sessionId}`)
+
+            res.set('Set-Cookie', `sessionid=${req.session.protSocietyId}`)
             res.redirect('/pets')
           }
         })
