@@ -20,11 +20,12 @@ module.exports.session = session({
 })
 
 module.exports.loadSessionProtSociety = (req, res, next) => {
-  const { userId } = req.session.userId
-  if (userId) {
-    ProtSociety.findById(userId)
+  const { protSocietyId } = req.session
+  if (protSocietyId) {
+    ProtSociety.findById(protSocietyId)
       .then(protSociety => {
         req.protSociety = protSociety
+        res.locals.currentProtSociety = protSociety;
         next()
       })
       .catch(next)

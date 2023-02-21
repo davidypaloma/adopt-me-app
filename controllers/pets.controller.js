@@ -53,7 +53,7 @@ module.exports.create = ((req, res, next) => {
 })
 
 module.exports.doCreate = ((req, res, next) => {
-  // req.body.protSociety = req.user.id
+  // req.body.protSociety = req.protSociety.id
   Pet.create(req.body)
     .then((pet) => {
       res.redirect(`/pets/${pet.id}`)

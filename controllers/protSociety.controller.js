@@ -1,6 +1,6 @@
 const ProtSociety = require('../models/protSociety.model')
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 module.exports.create = (req, res, next) => {
   res.render('protSociety/newProtSociety')
