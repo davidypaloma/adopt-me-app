@@ -4,10 +4,11 @@
   <input type="button" value="Go back!" onclick="history.back()" />
 </form>
 
-<button onclick="javascript:location.href='/pets/new'" type="button">Nuevo
-  peludo</button>
-
-<a href="/profile/{{currentProtSociety.id}}">Profile</a>
+{{#if currentProtSociety.id}}
+  <button onclick="javascript:location.href='/pets/new'" type="button">Nuevo
+    peludo</button>
+  <a href="/profile/{{currentProtSociety.id}}">Profile</a>
+{{/if}}
 
 <form>
   <input
@@ -17,7 +18,6 @@
     id=""
     placeholder="Nombre"
   />
-  <button type="submit">search</button>
 
   <input
     value="{{query.class}}"
@@ -26,7 +26,6 @@
     id=""
     placeholder="Tipo de animal"
   />
-  <button type="submit">search</button>
 
   <input
     value="{{query.sex}}"
@@ -35,7 +34,6 @@
     id=""
     placeholder="Sexo"
   />
-  <button type="submit">search</button>
 
   <input
     value="{{query.breed}}"
@@ -53,7 +51,6 @@
     placeholder="Localización"
   /> <button type="submit">search</button> --}}
 </form>
-
 
 <div>
   {{#each pets as |pet|}}
