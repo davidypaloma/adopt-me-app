@@ -9,7 +9,8 @@ module.exports = {
       },
       colors: {
         'brown': '#f1dbbf',
-        'green': '#698269'
+        'green': '#698269',
+        'red': '#aa5656'
       }
     },
     accentColor: ({ theme }) => ({

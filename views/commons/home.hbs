@@ -1,17 +1,29 @@
-<div class="bg-brown h-screen w-auto">
+<div class="bg-brown h-screen w-auto overflow-y-hidden">
   <div class="flex justify-center">
     <img class="w-3/4 mt-14" src="/img/LOGO.png" alt="AdoptMe Logo" />
   </div>
   <div class="flex justify-center absolute">
-    <img class="w-2/4" src="/img/PETS.png" alt="Pets AdoptMe" />
+    <img class="w-2/4" src="/img/PETS.png" alt="Pets AdoptMe"/>
   </div>
   <div class="w-screen absolute flex justify-center mt-130">
-    <p class="text-brown font-extralight text-6xl mt-130 text-center">Hola,<br
-      /><span class="font-bold">¿quién eres?</span></p>
+    <p class="text-brown font-extralight text-6xl mt-130 text-center">Hola,<br/><span class="font-bold">¿quién eres?<span><p>
   </div>
-  <div class="w-screen absolute flex justify-center mt-400">
-    <a class="bg-brown w-30 rounded text-center" href="/login">Protectora</a>
-    <a href="/pets">Adoptante</a>
+
+
+
+  <div class="w-screen absolute mt-400">
+    <div class="flex justify-around mt-7">
+      <div class="flex justify-around absolute">
+        <img class="w-1/4 h-full" src="/img/DOG.png" alt="Dog">
+        <img class="w-1/4 h-full" src="/img/ADOPTANTS.png" alt="Adoptants">
+       </div>
+        <div class=" bg-brown rounded-full w-24 h-24"></div>
+        <div class=" bg-brown rounded-full w-24 h-24"></div>
+    </div>
+    <div class="flex justify-around mt-8">
+        <button class="text-red bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="button">Protectora</button>
+        <button class="text-red bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900" onclick="javascript:location.href='/pets'" type="button">Adoptante</button>
+    </div>
   </div>
 
   <div class="bg-green h-screen rounded-t-3xl mt-130">
