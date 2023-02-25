@@ -5,10 +5,12 @@
 </form>
 
 {{#if currentProtSociety.id}}
-  <button onclick="javascript:location.href='/pets/new'" type="button">Nuevo
+  <button class="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onclick="javascript:location.href='/pets/new'" type="button">Nuevo
     peludo</button>
   <a href="/profile/{{currentProtSociety.id}}">Profile</a>
 {{/if}}
+
+
 
 <form>
   <input
