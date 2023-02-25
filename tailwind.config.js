@@ -4,6 +4,12 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+        '60': '60px',
+        '70': '70px',
+        '80': '80px',
+        '90': '90px',
+        '110': '110px',
+        '120': '120px',
         '130': '130px',
         '400': '400px'
       },
@@ -11,6 +17,10 @@ module.exports = {
         'brown': '#f1dbbf',
         'green': '#698269',
         'red': '#aa5656'
+      },
+      fontFamily: {
+        'poppins':['Poppins', 'Secular One', 'sans-serif'],
+        'lobster': 'Lobster'
       }
     },
     accentColor: ({ theme }) => ({
@@ -335,10 +345,7 @@ module.exports = {
         '"Liberation Mono"',
         '"Courier New"',
         'monospace',
-      ],
-      display: [
-        'Poppins'
-      ],
+      ]
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

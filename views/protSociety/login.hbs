@@ -1,4 +1,3 @@
-This is the login!
 {{!-- 
 <form>
   <input type="button" value="Go back!" onclick="history.back()" />
@@ -24,7 +23,7 @@ This is the login!
 </form> --}}
 
 
-<div class="bg-brown h-screen w-auto">
+<div class="bg-brown font-poppins h-screen w-auto overflow-y-hidden">
   <div class="flex justify-center">
     <img class="w-3/4 mt-14" src="/img/LOGO.png" alt="AdoptMe Logo" />
   </div>
@@ -32,49 +31,45 @@ This is the login!
     <img class="w-2/4" src="/img/PETS.png" alt="Pets AdoptMe" />
   </div>
   <div class="w-screen absolute flex justify-center mt-130">
-    <p class="text-brown font-extralight text-6xl mt-130 text-center">Genial,<br/><span class="font-bold">¡Bienvenido!<span><p>
+    <p class="text-brown font-extralight text-6xl mt-130 text-start">Genial<br/><span class="font-bold">¡Bienvenido!<span><p>
   </div>
 
   <div class="bg-red w-screen absolute mt-400">
 
-    <form action="/login" method="POST">
-      <div class="underline underline-offset-4">
-        <img src="img/MAIL_ICON" alt="e-mail">
-        <label for="email"></label>
-        <input name="email" type="email" id="email" placeholder="Email"/>
-      </div>
+      <form class="w-full max-w-sm" action="/login" method="POST">
+        <div class="mx-8 flex items-center border-b border-brown opacity-50 py-2">
+          <img class="w-5 h-4" src="/img/MAIL_ICON.png" alt="e-mail">
+          <label for="email"></label>
+          <input class="appearance-none bg-transparent border-none w-full placeholder-brown mr-3 py-1 px-2 leading-tight focus:outline-none" name="email" type="email" id="email" placeholder="Email"/>
+        </div>
 
-      <div class="underline underline-offset-4">
-        <img src="img/PASS_ICON" alt="e-mail">
-        <label for="password"></label>
-        <input name="password" type="password" id="password" placeholder="Password" />
-      </div>
+        <div class="mx-8 flex items-center border-b border-brown opacity-50 py-2">
+          <img class="w-4 h-5" src="/img/PASS_ICON.png" alt="password">
+          <label for="password"></label>
+          <input class="appearance-none bg-transparent border-none w-full placeholder-brown mr-3 py-1 px-2 leading-tight focus:outline-none" name="password" type="password" id="password" placeholder="Password" />
+        </div>
 
-      <div>
-        <label class="relative inline-flex items-center cursor-pointer">
-          <input type="checkbox" value="" class="sr-only peer">
-          <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-          <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</span>
-        </label>
-        <p>Forget Password?</p>
-      </div>  
+        <div class="mx-8 flex justify-between" >
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="w-11 h-6 bg-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <span class=" text-brown ml-3 text-sm font-medium dark:text-gray-300">Remember me</span>
+          </label>
+          <p class="text-brown">Forget Password?</p>
+        </div>  
 
+        <div class="flex justify-center">
+          <button class="text-green bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="button">Log in</button>
+        </div>
+      </form>
       <div class="flex justify-center">
-        <button class="text-red bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="button">Log in</button>
+        <p class="text-brown">Don't have an account? <span class=" text-brown underline underline-offset-1">Sign up</span></p>
       </div>
-    </form>
-    <div>
-      <p>Don't have an account? <span class="underline underline-offset-1">Sign up</span></p>
-    </div>
-    <div>
-      <p>or log in with</p>
-    </div>
-    <div class="flex justify-around mt-7">
-  
-    </div>
-
-  </div>
-</div>
+      <div class="flex justify-center">
+        <p class="text-brown">or log in with</p>
+      </div>
+     </div>
 
   <div class="bg-green h-4/5 rounded-t-3xl mt-130"></div>
+  
 </div>

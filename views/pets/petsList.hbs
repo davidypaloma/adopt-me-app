@@ -1,78 +1,80 @@
-<h1>Todos nuestros peludos</h1>
+<div class="bg-brown h-screen w-auto overflow-y-hidden fixed">
+  <img class="w-1/4 mt-6" src="/img/LOGO.png" alt="AdoptMe Logo"/>
+  <div class="bg-green h-screen rounded-t-3xl mt-60">
 
-<form>
-  <input type="button" value="Go back!" onclick="history.back()" />
-</form>
+  {{!-- {{#if currentProtSociety.id}}
+      <button
+        class="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+        onclick="javascript:location.href='/pets/new'"
+        type="button"
+      >Nuevo peludo</button>
+      <a href="/profile/{{currentProtSociety.id}}">Profile</a>
+    {{/if}}
 
-{{#if currentProtSociety.id}}
-  <button class="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onclick="javascript:location.href='/pets/new'" type="button">Nuevo
-    peludo</button>
-  <a href="/profile/{{currentProtSociety.id}}">Profile</a>
-{{/if}}
+    <form>
+      <input
+        value="{{query.name}}"
+        type="text"
+        name="name"
+        id=""
+        placeholder="Nombre"
+      />
 
+      <input
+        value="{{query.class}}"
+        type="text"
+        name="class"
+        id=""
+        placeholder="Tipo de animal"
+      />
 
+      <input
+        value="{{query.sex}}"
+        type="text"
+        name="sex"
+        id=""
+        placeholder="Sexo"
+      />
 
-<form>
-  <input
-    value="{{query.name}}"
-    type="text"
-    name="name"
-    id=""
-    placeholder="Nombre"
-  />
+      <input
+        value="{{query.breed}}"
+        type="text"
+        name="breed"
+        id=""
+        placeholder="Raza"
+      />
+      <button type="submit">search</button>
+    </form> --}}
 
-  <input
-    value="{{query.class}}"
-    type="text"
-    name="class"
-    id=""
-    placeholder="Tipo de animal"
-  />
+  <div class="w-screen absolute flex justify-center mt-10">
+    <p class="text-brown font-lobster text-6xl text-center">Todos nuestros<br/>peludos<p>
+  </div>
 
-  <input
-    value="{{query.sex}}"
-    type="text"
-    name="sex"
-    id=""
-    placeholder="Sexo"
-  />
+  <div class="flex justify-center absolute">
+    <div class="bg-red overflow-y-auto mt-52 h-screen w-11/12">
+      {{#each pets as |pet|}}
+        <a href="/pets/{{pet.id}}"><h2>{{pet.name}}</h2></a>
+        <img width="550px" src="{{pet.image}}" />
+        <ul>
+          <li>class: {{pet.class}}</li>
+          <li>age: {{pet.age}}</li>
+          <li>sex: {{pet.sex}}</li>
+          <li>breed: {{pet.breed}}</li>
+          <li>energieLevel: {{pet.energieLevel}}</li>
+          <li>healthStatus: {{pet.healthStatus}}</li>
+          <li>isAdopted-{{pet.isAdopted}}</li>
+          <li>description: {{pet.description}}</li>
+          <li>protSociety: {{pet.protSociety.name}}</li>
+          <li>Location: {{pet.protSociety.location}}</li>
+          {{!-- <li>Id: {{pet.protSociety.id}}</li> --}}
+        </ul>
 
-  <input
-    value="{{query.breed}}"
-    type="text"
-    name="breed"
-    id=""
-    placeholder="Raza"
-  />
-  <button type="submit">search</button>
-  {{!-- <input
-    value="{{query.location}}"
-    type="text"
-    name="location"
-    id=""
-    placeholder="Localización"
-  /> <button type="submit">search</button> --}}
-</form>
+        {{!-- <button onclick="javascript:location.href='{{pet.protSociety.website}}'" type="button">NOMBRE DE LA PROTECTORA</button> --}}
 
-<div>
-  {{#each pets as |pet|}}
-    <a href="/pets/{{pet.id}}"><h2>{{pet.name}}</h2></a>
-    <img width="550px" src="{{pet.image}}" />
-    <ul>
-      <li>class: {{pet.class}}</li>
-      <li>age: {{pet.age}}</li>
-      <li>sex: {{pet.sex}}</li>
-      <li>breed: {{pet.breed}}</li>
-      <li>energieLevel: {{pet.energieLevel}}</li>
-      <li>healthStatus: {{pet.healthStatus}}</li>
-      <li>isAdopted-{{pet.isAdopted}}</li>
-      <li>description: {{pet.description}}</li>
-      <li>protSociety: {{pet.protSociety.name}}</li>
-      <li>Location: {{pet.protSociety.location}}</li>
-      {{!-- <li>Id: {{pet.protSociety.id}}</li> --}}
-    </ul>
+      {{/each}}
+    </div>
+  </div>
+  {{! <div class="bg-green h-screen rounded-t-3xl mt-120">
 
-    {{!-- <button onclick="javascript:location.href='{{pet.protSociety.website}}'" type="button">NOMBRE DE LA PROTECTORA</button> --}}
-
-  {{/each}}
+  </div> }}
 </div>
