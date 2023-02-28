@@ -492,6 +492,21 @@ video {
   margin-left: 2rem;
   margin-right: 2rem;
 }
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.-mt-24 {
+  margin-top: -6rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -510,14 +525,14 @@ video {
 .mr-3 {
   margin-right: 0.75rem;
 }
-.mt-12 {
-  margin-top: 3rem;
-}
 .mt-130 {
   margin-top: 130px;
 }
 .mt-14 {
   margin-top: 3.5rem;
+}
+.mt-28 {
+  margin-top: 7rem;
 }
 .mt-3 {
   margin-top: 0.75rem;
@@ -536,6 +551,9 @@ video {
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
 }
 .flex {
   display: flex;
@@ -630,6 +648,39 @@ video {
 .max-w-sm {
   max-width: 24rem;
 }
+@keyframes pulse {
+
+  50% {
+    opacity: .5;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -662,9 +713,6 @@ video {
 .overflow-y-hidden {
   overflow-y: hidden;
 }
-.rounded {
-  border-radius: 0.25rem;
-}
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -685,15 +733,8 @@ video {
 .border-b {
   border-bottom-width: 1px;
 }
-.border-b-4 {
-  border-bottom-width: 4px;
-}
 .border-none {
   border-style: none;
-}
-.border-blue-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(29 78 216 / var(--tw-border-opacity));
 }
 .border-brown {
   --tw-border-opacity: 1;
@@ -726,10 +767,6 @@ video {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -745,6 +782,10 @@ video {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .pl-3 {
   padding-left: 0.75rem;
@@ -795,6 +836,12 @@ video {
 .font-medium {
   font-weight: 500;
 }
+.font-light {
+  font-weight: 300;
+}
+.font-semibold {
+  font-weight: 600;
+}
 .leading-tight {
   line-height: 1.25;
 }
@@ -809,10 +856,6 @@ video {
 .text-red {
   --tw-text-opacity: 1;
   color: rgb(170 86 86 / var(--tw-text-opacity));
-}
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -873,6 +916,11 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.after\:bg-gray-300::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
 .after\:transition-all::after {
   content: var(--tw-content);
   transition-property: all;
@@ -882,10 +930,6 @@ video {
 .after\:content-\[\'\'\]::after {
   --tw-content: '';
   content: var(--tw-content);
-}
-.hover\:border-blue-500:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
 }
 .hover\:bg-brown:hover {
   --tw-bg-opacity: 1;
@@ -908,6 +952,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
+.peer:checked ~ .peer-checked\:bg-brown {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 219 191 / var(--tw-bg-opacity));
+}
 .peer:checked ~ .peer-checked\:after\:translate-x-full::after {
   content: var(--tw-content);
   --tw-translate-x: 100%;
@@ -917,6 +965,16 @@ video {
   content: var(--tw-content);
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.peer:checked ~ .peer-checked\:after\:border-green::after {
+  content: var(--tw-content);
+  --tw-border-opacity: 1;
+  border-color: rgb(105 130 105 / var(--tw-border-opacity));
+}
+.peer:checked ~ .peer-checked\:after\:bg-green::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(105 130 105 / var(--tw-bg-opacity));
 }
 .peer:focus ~ .peer-focus\:outline-none {
   outline: 2px solid transparent;

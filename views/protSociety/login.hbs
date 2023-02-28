@@ -31,43 +31,43 @@
     <img class="w-2/4" src="/img/PETS.png" alt="Pets AdoptMe" />
   </div>
   <div class="w-screen absolute flex justify-center mt-130">
-    <p class="text-brown font-extralight text-6xl mt-130 text-start">Genial<br/><span class="font-bold">¡Bienvenido!<span><p>
+    <p class="text-brown font-extralight text-6xl mt-130 text-start mx-4">Genial<br/><span class="font-bold">¡Bienvenido!<span><p>
   </div>
 
-  <div class="bg-red w-screen absolute mt-400">
+  <div class="w-screen absolute mt-400">
 
       <form class="w-full max-w-sm" action="/login" method="POST">
-        <div class="mx-8 flex items-center border-b border-brown opacity-50 py-2">
+        <div class="mx-8 flex items-center border-b border-brown opacity-50">
           <img class="w-5 h-4" src="/img/MAIL_ICON.png" alt="e-mail">
           <label for="email"></label>
-          <input class="appearance-none bg-transparent border-none w-full placeholder-brown mr-3 py-1 px-2 leading-tight focus:outline-none" name="email" type="email" id="email" placeholder="Email"/>
+          <input class="appearance-none bg-transparent border-none w-full placeholder-brown mr-3 py-1 px-2 leading-tight focus:outline-none font-light" name="email" type="email" id="email" placeholder="Email"/>
         </div>
 
-        <div class="mx-8 flex items-center border-b border-brown opacity-50 py-2">
+        <div class="mx-8 flex items-center border-b border-brown opacity-50 mt-2">
           <img class="w-4 h-5" src="/img/PASS_ICON.png" alt="password">
           <label for="password"></label>
           <input class="appearance-none bg-transparent border-none w-full placeholder-brown mr-3 py-1 px-2 leading-tight focus:outline-none" name="password" type="password" id="password" placeholder="Password" />
         </div>
 
-        <div class="mx-8 flex justify-between" >
+        <div class="mx-8 flex justify-between mt-3 items-center" >
           <label class="relative inline-flex items-center cursor-pointer">
             <input type="checkbox" value="" class="sr-only peer">
-            <div class="w-11 h-6 bg-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            <span class=" text-brown ml-3 text-sm font-medium dark:text-gray-300">Remember me</span>
+            <div class="w-11 h-6 bg-white peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-green after:content-[''] after:absolute after:top-[2px] after:left-[2px] peer-checked:after:bg-green after:bg-gray-300 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-brown"></div>
+            <span class=" text-brown ml-2 text-xs font-medium dark:text-gray-300">Remember me</span>
           </label>
-          <p class="text-brown">Forget Password?</p>
+          <p class="text-brown text-xs">Forgot Password?</p>
         </div>  
 
-        <div class="flex justify-center">
-          <button class="text-green bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="button">Log in</button>
+        <div class="flex justify-center mt-5">
+          <button class="text-green bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-semibold rounded-full text-sm px-12 py-2 text-center dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="button">Log in</button>
         </div>
       </form>
-      <div class="flex justify-center">
+      <div class="flex justify-center text-xs mt-5">
         <p class="text-brown">Don't have an account? <span class=" text-brown underline underline-offset-1">Sign up</span></p>
       </div>
-      <div class="flex justify-center">
+      {{!-- <div class="flex justify-center">
         <p class="text-brown">or log in with</p>
-      </div>
+      </div> --}}
      </div>
 
   <div class="bg-green h-4/5 rounded-t-3xl mt-130"></div>
