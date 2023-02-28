@@ -1,37 +1,30 @@
-<h1>{{pet.name}}</h1>
-<img src="{{pet.image}}" alt="{{pet.name}} image" />
-<h3>{{pet.class}}</h3>
-<h3>{{pet.age}}</h3>
-<h3>{{pet.sex}}</h3>
-<h3>{{pet.breed}}</h3>
-<h3>{{pet.protSociety.location}}</h3>
-<h3>{{pet.energyLevel}}</h3>
-{{#if pet.isAdopted}}
-  <img
-    width="50px"
-    src="https://cdn-icons-png.flaticon.com/512/8206/8206844.png"
-    alt=""
-  />
-  <h3>¡Ya tiene un nuevo hogar!</h3>
-{{else}}
-  <img
-    width="50px"
-    src="https://cdn-icons-png.flaticon.com/512/8206/8206881.png"
-    alt=""
-  />
-  <h3>Sigue buscando una familia.</h3>
-{{/if}}
-<h4>{{pet.description}}</h4>
+{{> backgroundSmall}}
 
-<form>
-  <input type="button" value="Go back!" onclick="history.back()" />
-</form>
 
-<h2>{{pet.protSociety.name}}</h2>
+<div class="flex justify-center">
+  <div class="border-[12px] border-brown w-11/12 h-52 flex justify-center items-center rounded-[30px] mt-11">
+  <img class="w-11/12 h-40 object-cover rounded-2xl object-top" src="{{pet.image}}"/>
+  </div>
+</div>
 
-{{#if currentProtSociety.id}}
-  <button
-    onclick="javascript:location.href='/pets/{{pet.id}}/update'"
-    type="button"
-  >Editar peludo</button>
-{{/if}}
+<div class="text-brown font-lobster text-5xl text-center mt-4 mb-4">{{pet.name}}</div>
+
+<div class="flex justify-center">
+  <div class="grid grid-cols-2 gap-4 w-11/12">
+    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.age}}</div>
+    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.sex}}</div>
+    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.protSociety.location}}</div>
+    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.breed}}</div>
+  </div>
+</div>
+
+<div class="flex justify-center mt-4">
+  <p class="w-11/12 h-28 text-green bg-brown rounded-2xl text-base overflow-scroll p-2">{{pet.description}}</p>
+</div>
+
+<div class="flex justify-center mt-4">
+  <div class="grid grid-cols-2 gap-4 w-11/12">
+    <div class="h-8 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.protSociety.name}}</div>
+    <div class="h-8 text-green bg-brown rounded-full text-lg flex justify-center items-center">Contáctanos</div>
+  </div>
+</div>

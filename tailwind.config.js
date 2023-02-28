@@ -5,8 +5,6 @@ module.exports = {
     extend: {
       spacing: {
         '60': '60px',
-        '70': '70px',
-        '80': '80px',
         '90': '90px',
         '110': '110px',
         '120': '120px',
@@ -19,7 +17,7 @@ module.exports = {
         'red': '#aa5656'
       },
       fontFamily: {
-        'poppins':['Poppins', 'Secular One', 'sans-serif'],
+        'poppins': ['Poppins', 'Secular One', 'sans-serif'],
         'lobster': 'Lobster'
       }
     },
