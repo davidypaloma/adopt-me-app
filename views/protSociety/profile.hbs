@@ -1,32 +1,44 @@
-<div class="h-screen w-auto overflow-y-hidden bg-brown font-lobster text-green">
-  <div class="flex flex-col items-center justify-center">
+<div class="h-screen w-auto overflow-y-hidden bg-brown text-green">
+  <div class="flex flex-col items-center justify-center font-lobster">
     <img class="mt-5 w-1/6" src="/img/DOG.png" alt="Dog Logo" />
-    <h1 class="text-6xl">{{protSociety.name}}</h1>
+    <h1 class="text-5xl uppercase">{{protSociety.name}}</h1>
   </div>
 
   <div class="absolute w-screen">
-    <div class="flex flex-col items-center justify-center">
-        <img
-        width="100px"
-        src="{{protSociety.image}}"
-        alt="{{protSociety.name}} image"
-        />
-        <h3 class="text-brown">{{protSociety.location}}</h3>
-        <h3>{{protSociety.email}}</h3>
-        <button
+    <div class="flex flex-col items-center justify-center text-brown">
+      <div
+        class="m-11 flex h-48 w-6/12 items-center justify-center rounded-full border-[10px] border-brown"
+      >
+        <div
+          class="m-1 flex h-40 items-center justify-center rounded-full border-[10px] border-brown"
+        >
+          <img
+            class="m-1 h-32 rounded-full object-cover object-top font-poppins"
+            src="{{protSociety.image}}"
+            alt="{{protSociety.name}} image"
+          />
+        </div>
+      </div>
+
+      <h3
+        class="rounded-full bg-brown my-2 py-1 px-16 text-green"
+      >{{protSociety.name}}</h3>
+      <h3 class="rounded-full bg-brown my-2 py-1 px-16 text-green">{{protSociety.email}}</h3>
+      <h3 class="rounded-full bg-brown my-2 py-1 px-16 text-green">{{protSociety.location}}</h3>
+      <button
         onclick="javascript:location.href='{{protSociety.website}}'"
         type="button"
-        >Visita nuestra web</button>
+      >Visita nuestra web</button>
 
-        {{! Other way to get a button with anchor }}
-        {{!-- <form action="/profile/{{protSociety.id}}/edit">
+      {{! Other way to get a button with anchor }}
+      {{!-- <form action="/profile/{{protSociety.id}}/edit">
             <input type="submit" value="Editar perfil" />
         </form> --}}
 
-        <button
+      <button
         onclick="javascript:location.href='/profile/{{protSociety.id}}/edit'"
         type="button"
-        >Editar perfil</button>
+      >Editar perfil</button>
     </div>
   </div>
 
