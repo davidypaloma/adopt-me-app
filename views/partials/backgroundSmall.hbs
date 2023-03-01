@@ -9,14 +9,14 @@
       <div class="h-10"></div>
       <div class="flex justify-end items-center h-10">
 
-      {{!-- {{#if currentProtSociety.id}} --}}
-        <a href="/login/{{protSociety.id}}">
+      {{#if currentProtSociety.id}}
+        <a href="/profile/{{currentProtSociety.id}}">
           <div class="bg-green w-28 h-7 rounded-l-full flex items-center pl-3">
           <img class="h-3/5 w-auto mr-2" src="/img/USER_ICON.png" alt="user icon">
           <p>Tu cuenta</p>
           </div>
         </a>
-      {{!-- {{/if}} --}}
+      {{/if}}
       </div>
 
       <div class="flex items-center h-10">
@@ -24,14 +24,14 @@
       </div>
       <div class="h-10"></div>
       <div class="flex justify-end items-center h-10">
-      {{!-- {{#if currentProtSociety.id}} --}}
+      {{#if currentProtSociety.id}}
         <a href="#">
           <div class="bg-green w-28 h-7 rounded-l-full flex items-center pl-3">
           <img class="h-3/5 w-auto mr-2" src="/img/PLUS_ICON.png" alt="user icon">
           <p>Nuevo</p>
           </div>
         </a>
-      {{!-- {{/if}} --}}
+      {{/if}}
       </div>
 
       <div class="h-10"></div>

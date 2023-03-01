@@ -1,18 +1,37 @@
-This is the Protection Society Profile
+<div class="h-screen w-auto overflow-y-hidden bg-brown font-lobster text-green">
+  <div class="flex flex-col items-center justify-center">
+    <img class="mt-5 w-1/6" src="/img/DOG.png" alt="Dog Logo" />
+    <h1 class="text-6xl">{{protSociety.name}}</h1>
+  </div>
 
-<h1>{{ protSociety.name }}</h1>
-<img width="100px" src="{{protSociety.image}}" alt="{{protSociety.name}} image">
-<h3>{{protSociety.location}}</h3>
-<h3>{{protSociety.email}}</h3>
-<button onclick="javascript:location.href='{{protSociety.website}}'" type="button">Visita nuestra web</button>
+  <div class="absolute w-screen">
+    <div class="flex flex-col items-center justify-center">
+        <img
+        width="100px"
+        src="{{protSociety.image}}"
+        alt="{{protSociety.name}} image"
+        />
+        <h3 class="text-brown">{{protSociety.location}}</h3>
+        <h3>{{protSociety.email}}</h3>
+        <button
+        onclick="javascript:location.href='{{protSociety.website}}'"
+        type="button"
+        >Visita nuestra web</button>
 
-{{!-- Other way to get a button with anchor --}}
-{{!-- <form action="/profile/{{protSociety.id}}/edit">
-    <input type="submit" value="Editar perfil" />
-</form> --}}
+        {{! Other way to get a button with anchor }}
+        {{!-- <form action="/profile/{{protSociety.id}}/edit">
+            <input type="submit" value="Editar perfil" />
+        </form> --}}
 
-<button onclick="javascript:location.href='/profile/{{protSociety.id}}/edit'" type="button">Editar perfil</button>
+        <button
+        onclick="javascript:location.href='/profile/{{protSociety.id}}/edit'"
+        type="button"
+        >Editar perfil</button>
+    </div>
+  </div>
 
+  <div class="mt-[10px] h-screen rounded-t-3xl bg-green"></div>
+</div>
 <form>
- <input type="button" value="Go back!" onclick="history.back()">
+  <input type="button" value="Go back!" onclick="history.back()" />
 </form>
