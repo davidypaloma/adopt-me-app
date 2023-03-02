@@ -1,94 +1,145 @@
-<div class="h-screen w-auto overflow-y-hidden bg-brown font-poppins">
-  <div class="flex justify-center">
-    <img class="mt-10 w-1/4" src="/img/DOG.png" alt="Dog Logo" />
+<div class="h-screen w-auto overflow-y-hidden bg-brown text-green">
+  <div class="flex items-center justify-center">
+    <img class="absolute mt-24 w-1/6" src="/img/DOG.png" alt="Dog Logo" />
   </div>
-  <h1 class="mt-20 w-3/4">{{protSociety.name}}</h1>
+  <h1
+    class="mt-[4.5rem] text-center font-lobster text-5xl uppercase"
+  >{{protSociety.name}}</h1>
+
+  <div class="absolute w-screen">
+    <form action="/profile/{{currentProtSociety.id}}" method="POST">
+      <div
+        class="ml-[5.5rem] mt-4 flex h-48 w-6/12 items-center rounded-full border-[10px] border-brown"
+      >
+        <div
+          class="m-1 flex h-40 w-40 items-center justify-center rounded-full bg-brown"
+        >
+          <img
+            class="m-1 h-[9rem] rounded-full object-cover object-top"
+            src="{{protSociety.image}}"
+            alt="{{protSociety.name}} image"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="font poppins align-start ml-6 flex w-64 text-2xl text-brown"
+          for="name"
+        >Nombre</label>
+        <div
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+        >
+          <img
+            class="mr-2 h-5 w-5 text-green"
+            src="/img/USER_ICON.png"
+            alt="user icon"
+          />
+          <input
+            class="appearance-none"
+            name="name"
+            type="text"
+            id="name"
+            value="{{currentProtSociety.name}}"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+          for="email"
+        >Email</label>
+        <div
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+        >
+          <img
+            class="mr-2 h-4 w-5 text-green"
+            src="/img/MAIL_ICON.png"
+            alt="user icon"
+          />
+          <input
+            class="appearance-none border-none focus:outline-none"
+            name="email"
+            type="email"
+            id="email"
+            value="{{currentProtSociety.email}}"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+          for="location"
+        >Localización</label>
+        <div
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+        >
+          <img
+            class="mr-2 h-4 w-5 text-green"
+            src="/img/MAIL_ICON.png"
+            alt="user icon"
+          />
+          <input
+            name="location"
+            type="text"
+            id="location"
+            value="{{currentProtSociety.location}}"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+          for="website"
+        >Página Web</label>
+        <div
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+        >
+          <img
+            class="mr-2 h-4 w-5 text-green"
+            src="/img/MAIL_ICON.png"
+            alt="user icon"
+          />
+          <input
+            name="website"
+            type="text"
+            id="website"
+            value="{{currentProtSociety.website}}"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+          for="password"
+        >Contraseña</label>
+        <div
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+        >
+          <img
+            class="mr-2 h-4 w-5 text-green"
+            src="/img/MAIL_ICON.png"
+            alt="user icon"
+          />
+          <input
+            name="password"
+            type="password"
+            id="password"
+            value="{{protSociety.password}}"
+            disabled
+          />
+        </div>
+      </div>
+
+      <button
+        class="mx-auto mt-8 block w-6/12 items-center rounded-full bg-red px-3 py-1 text-center font-poppins text-sm font-extralight text-brown"
+        type="submit"
+      >Editar</button>
+    </form>
+  </div>
+  <div class="mt-[100px] h-screen rounded-t-3xl bg-green"></div>
 </div>
-
-<div class="absolute mt-400 w-screen">
-  <form action="/profile/{{currentProtSociety.id}}" method="POST">
-    <div>
-      <label
-        class=".rounded-full w-2/4 text-sm font-extralight text-brown"
-        for="image"
-      >Imagen de perfil</label>
-      <input
-        name="image"
-        type="text"
-        id="image"
-        value="{{currentProtSociety.image}}"
-      />
-    </div>
-
-    <div>
-      <label
-        class=".rounded-full text-sm font-extralight text-brown"
-        for="name"
-      >Nombre</label>
-      <input name="name" type="text" id="name" value="{{currentProtSociety.name}}" />
-    </div>
-
-    <div>
-      <label
-        class=".rounded-full text-sm font-extralight text-brown"
-        for="email"
-      >Email</label>
-      <input
-        name="email"
-        type="email"
-        id="email"
-        value="{{currentProtSociety.email}}"
-      />
-    </div>
-
-    <div>
-      <label
-        class=".rounded-full text-sm font-extralight text-brown"
-        for="location"
-      >Localización</label>
-      <input
-        name="location"
-        type="text"
-        id="location"
-        value="{{currentProtSociety.location}}"
-      />
-    </div>
-
-    <div>
-      <label
-        class=".rounded-full text-sm font-extralight text-brown"
-        for="website"
-      >Página Web</label>
-      <input
-        name="website"
-        type="text"
-        id="website"
-        value="{{currentProtSociety.website}}"
-      />
-    </div>
-
-    <div>
-      <label
-        class=".rounded-full text-sm font-extralight text-brown"
-        for="password"
-      >Contraseña</label>
-      <input
-        name="password"
-        type="password"
-        id="password"
-        value="{{protSociety.password}}"
-        disabled
-      />
-    </div>
-
-    <button
-      class="rounded-full bg-brown px-5 py-2.5 text-center text-sm font-bold text-red"
-      type="submit"
-    >Editar</button>
-  </form>
-</div>
-
-<div class="mt-130 h-screen rounded-t-3xl bg-green"></div>
-<form>
-  <input type="button" value="Go back!" onclick="history.back()" />
-</form>
