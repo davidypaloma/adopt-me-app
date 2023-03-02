@@ -19,12 +19,18 @@
 
   <div class="absolute mt-400 w-screen">
 
-      <form class="w-full max-w-sm" action="/login" method="POST">
-        <div class="mx-8 flex items-center border-b border-brown opacity-50 mb-6">
-          <img class="w-5 h-4" src="/img/MAIL_ICON.png" alt="e-mail">
-          <label for="email"></label>
-          <input class="appearance-none bg-transparent border-none w-full placeholder-brown text-brown mr-3 py-1 px-2 leading-tight focus:outline-none font-light" name="email" type="email" id="email" placeholder="Email"/>
-        </div>
+    <form class="w-full max-w-sm" action="/login" method="POST">
+      <div class="mx-8 mb-6 flex items-center border-b border-brown opacity-50">
+        <img class="h-4 w-5" src="/img/MAIL_ICON.png" alt="e-mail" />
+        <label for="email"></label>
+        <input
+          class="mr-3 w-full appearance-none border-none bg-transparent py-1 px-2 font-light leading-tight text-brown placeholder-brown focus:outline-none"
+          name="email"
+          type="email"
+          id="email"
+          placeholder="Email"
+        />
+      </div>
 
       <div class="mx-8 mt-2 flex items-center border-b border-brown opacity-50">
         <img class="h-5 w-4" src="/img/PASS_ICON.png" alt="password" />
@@ -47,17 +53,26 @@
           <p class="text-brown text-xs">¿Olvidaste la contraseña?</p>
         </div>   }}
 
-        <div class="flex justify-center mt-14">
-          <button class="text-green bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-semibold rounded-full text-sm px-12 py-2 text-center dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="submit">Acceder</button>
-        </div>
-      </form>
-
-      <div class="flex justify-center text-xs mt-4">
-        <p class="text-brown">¿No tienes cuenta? <button  class=" text-brown underline underline-offset-1" onclick="javascript:location.href='/protSociety/new'" type="button">Regístrate</button></p>
+      <div class="mt-14 flex justify-center">
+        <button
+          class="rounded-full bg-brown px-12 py-2 text-center text-sm font-semibold text-green hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown dark:focus:ring-yellow-900"
+          onclick="javascript:location.href='/login'"
+          type="submit"
+        >Acceder</button>
       </div>
-      {{!-- <div class="flex justify-center">
-        <p class="text-brown">or log in with</p>
-      </div> }}
+    </form>
+
+    <div class="mt-4 flex justify-center text-xs">
+      <p class="text-brown">¿No tienes cuenta?
+        <button
+          class="text-brown underline underline-offset-1"
+          onclick="javascript:location.href='/protSociety/new'"
+          type="button"
+        >Regístrate</button></p>
+    </div>
+    {{! <div class="flex justify-center">
+      <p class="text-brown">or log in with</p>
+    </div> }}
   </div>
 
   <div class="mt-130 h-4/5 rounded-t-3xl bg-green"></div>
