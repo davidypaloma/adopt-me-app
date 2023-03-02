@@ -5,45 +5,81 @@
   </div>
 
   <div class="absolute w-screen">
-    <div class="flex flex-col items-center justify-center text-brown">
+    <div
+      class="ml-[5.5rem] mt-12 flex h-48 w-6/12 items-center rounded-full border-[10px] border-brown"
+    >
       <div
-        class="m-11 flex h-48 w-6/12 items-center justify-center rounded-full border-[10px] border-brown"
+        class="m-1 flex h-40 w-40 items-center justify-center rounded-full bg-brown"
       >
-        <div
-          class="m-1 flex h-40 items-center justify-center rounded-full border-[10px] border-brown"
-        >
-          <img
-            class="m-1 h-32 rounded-full object-cover object-top font-poppins"
-            src="{{protSociety.image}}"
-            alt="{{protSociety.name}} image"
-          />
-        </div>
+        <img
+          class="m-1 h-[9rem] rounded-full object-cover object-top"
+          src="{{protSociety.image}}"
+          alt="{{protSociety.name}} image"
+        />
       </div>
-
-      <h3
-        class="rounded-full bg-brown my-2 py-1 px-16 text-green"
-      >{{protSociety.name}}</h3>
-      <h3 class="rounded-full bg-brown my-2 py-1 px-16 text-green">{{protSociety.email}}</h3>
-      <h3 class="rounded-full bg-brown my-2 py-1 px-16 text-green">{{protSociety.location}}</h3>
-      <button
-        onclick="javascript:location.href='{{protSociety.website}}'"
-        type="button"
-      >Visita nuestra web</button>
-
-      {{! Other way to get a button with anchor }}
-      {{!-- <form action="/profile/{{protSociety.id}}/edit">
-            <input type="submit" value="Editar perfil" />
-        </form> --}}
-
-      <button
-        onclick="javascript:location.href='/profile/{{protSociety.id}}/edit'"
-        type="button"
-      >Editar perfil</button>
     </div>
+
+    <p
+      class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+    >Nombre</p>
+    <div
+      class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+    >
+      <img
+        class="mr-2 h-5 w-5 text-green"
+        src="/img/USER_ICON.png"
+        alt="user icon"
+      />
+      <p>{{protSociety.name}}</p>
+    </div>
+
+    <p
+      class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+    >Email</p>
+    <div
+      class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+    ><img
+        class="mr-2 h-4 w-5 text-green"
+        src="/img/MAIL_ICON.png"
+        alt="user icon"
+      />
+      <p>{{protSociety.email}}</p>
+    </div>
+
+    <p
+      class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+    >Localización</p>
+    <div
+      class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+    >
+      <img
+        class="mr-2 h-4 w-5 text-green"
+        src="/img/MAIL_ICON.png"
+        alt="user icon"
+      />
+      <p>{{protSociety.location}}</p>
+    </div>
+
+    <div class="mt-8 flex justify-evenly">
+      <a
+        class="mt-1 w-3/12 text-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+        href="/pets/new"
+      >Nuevo animalito</a>
+      <a
+        class="mt-1 w-3/12 text-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+        href="/profile/{{protSociety.id}}/edit"
+      >Editar perfil</a>
+      <a
+        class="mt-1 w-3/12 text-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+        href="/pets"
+      >Consultar listado</a>
+    </div>
+    <a
+      class="text-center mx-auto mt-8 block w-6/12 items-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+      href="{{protSociety.website}}"
+    >Visitar web</a>
   </div>
 
   <div class="mt-[10px] h-screen rounded-t-3xl bg-green"></div>
+
 </div>
-<form>
-  <input type="button" value="Go back!" onclick="history.back()" />
-</form>
