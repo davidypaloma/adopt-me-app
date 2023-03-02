@@ -1,10 +1,10 @@
 {{> backgroundSmall}}
 
     <div>
-        <form action="/pets" method="POST">
-            <div>
-                <label for="name">Pet name</label>
-                <input name="name" type="text" id="name">
+        {{!-- <form action="/pets" method="POST" class="grid grid-rows-4 gap 4">
+            <div class="bg-red w-1/2 flex justify-center">
+                <label for="name"></label>
+                <input class="appearance-none bg-red" name="name" type="text" id="name" placeholder="Nombre">
             </div>
 
             <div>
@@ -59,5 +59,60 @@
 
 
             <button type="submit">Nuevo</button>
+        </form> --}}
+
+        <form class="w-full max-w-sm pt-24" action="/login" method="POST">
+
+            <div class="mx-8 mb-2">
+                <label for="text"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="name" type="emtextail" id="name" placeholder="Nombre"/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="image"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen"/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="class"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?"/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="age"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="age" type="text" id="age" placeholder="Edad"/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="sex"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="sex" type="text" id="sex" placeholder="Sexo"/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="breed"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="breed" type="text" id="breed" placeholder="Raza"/>
+            </div>            
+
+            <div class="mx-8 mb-2">
+                <label for="energyLevel"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja"/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="isAdopted"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="isAdopted" type="text" id="isAdopted" value="false" hidden/>
+            </div>
+
+            <div class="mx-8 mb-2">
+                <label for="description"></label>
+                <textarea name="description rows"></textarea>
+            </div>
+
+
         </form>
+
+
+
+
+
     </div>
