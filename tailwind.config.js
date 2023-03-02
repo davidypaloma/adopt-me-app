@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '60': '60px',
         '90': '90px',
         '110': '110px',
         '120': '120px',

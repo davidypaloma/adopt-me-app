@@ -1,18 +1,85 @@
-This is the Protection Society Profile
+<div class="h-screen w-auto overflow-y-hidden bg-brown text-green">
+  <div class="flex items-center justify-center">
+    <img class="mt-24 w-1/6 absolute" src="/img/DOG.png" alt="Dog Logo" />
+  </div>
+    <h1 class="mt-[4.5rem] mb-6 text-5xl uppercase text-center font-lobster">{{protSociety.name}}</h1>
 
-<h1>{{ protSociety.name }}</h1>
-<img width="100px" src="{{protSociety.image}}" alt="{{protSociety.name}} image">
-<h3>{{protSociety.location}}</h3>
-<h3>{{protSociety.email}}</h3>
-<button onclick="javascript:location.href='{{protSociety.website}}'" type="button">Visita nuestra web</button>
+  <div class="absolute w-screen">
+    <div
+      class="ml-[5.5rem] mt-8 flex h-48 w-6/12 items-center rounded-full border-[10px] border-brown"
+    >
+      <div
+        class="m-1 flex h-40 w-40 items-center justify-center rounded-full bg-brown"
+      >
+        <img
+          class="m-1 h-[9rem] rounded-full object-cover object-top"
+          src="{{protSociety.image}}"
+          alt="{{protSociety.name}} image"
+        />
+      </div>
+    </div>
 
-{{!-- Other way to get a button with anchor --}}
-{{!-- <form action="/profile/{{protSociety.id}}/edit">
-    <input type="submit" value="Editar perfil" />
-</form> --}}
+    <p
+      class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+    >Nombre</p>
+    <div
+      class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+    >
+      <img
+        class="mr-2 h-5 w-5 text-green"
+        src="/img/USER_ICON.png"
+        alt="user icon"
+      />
+      <p>{{protSociety.name}}</p>
+    </div>
 
-<button onclick="javascript:location.href='/profile/{{protSociety.id}}/edit'" type="button">Editar perfil</button>
+    <p
+      class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+    >Email</p>
+    <div
+      class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+    ><img
+        class="mr-2 h-4 w-5 text-green"
+        src="/img/MAIL_ICON.png"
+        alt="user icon"
+      />
+      <p>{{protSociety.email}}</p>
+    </div>
 
-<form>
- <input type="button" value="Go back!" onclick="history.back()">
-</form>
+    <p
+      class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
+    >Localización</p>
+    <div
+      class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+    >
+      <img
+        class="mr-2 h-4 w-5 text-green"
+        src="/img/MAIL_ICON.png"
+        alt="user icon"
+      />
+      <p>{{protSociety.location}}</p>
+    </div>
+
+    <div class="mt-8 flex justify-evenly">
+      <a
+        class="mt-1 w-3/12 text-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+        href="/pets/new"
+      >Nuevo animalito</a>
+      <a
+        class="mt-1 w-3/12 text-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+        href="/profile/{{protSociety.id}}/edit"
+      >Editar perfil</a>
+      <a
+        class="mt-1 w-3/12 text-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+        href="/pets"
+      >Consultar listado</a>
+    </div>
+    <a
+      class="text-center mx-auto mt-8 block w-6/12 items-center rounded-full bg-red px-3 py-1 font-poppins text-sm font-extralight text-brown"
+      href="{{protSociety.website}}"
+    >Visitar web</a>
+  </div>
+
+  <div class="h-screen rounded-t-3xl bg-green"></div>
+
+</div>

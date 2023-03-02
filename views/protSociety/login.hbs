@@ -19,7 +19,7 @@
   <div class="w-screen absolute mt-400">
 
       <form class="w-full max-w-sm" action="/login" method="POST">
-        <div class="mx-8 flex items-center border-b border-brown opacity-50">
+        <div class="mx-8 flex items-center border-b border-brown opacity-50 mb-6">
           <img class="w-5 h-4" src="/img/MAIL_ICON.png" alt="e-mail">
           <label for="email"></label>
           <input class="appearance-none bg-transparent border-none w-full placeholder-brown text-brown mr-3 py-1 px-2 leading-tight focus:outline-none font-light" name="email" type="email" id="email" placeholder="Email"/>
@@ -40,12 +40,12 @@
           <p class="text-brown text-xs">¿Olvidaste la contraseña?</p>
         </div>   --}}
 
-        <div class="flex justify-center mt-12">
+        <div class="flex justify-center mt-14">
           <button class="text-green bg-brown hover:bg-brown focus:outline-none focus:ring-4 focus:ring-brown font-semibold rounded-full text-sm px-12 py-2 text-center dark:focus:ring-yellow-900" onclick="javascript:location.href='/login'" type="submit">Acceder</button>
         </div>
       </form>
 
-      <div class="flex justify-center text-xs mt-5">
+      <div class="flex justify-center text-xs mt-4">
         <p class="text-brown">¿No tienes cuenta? <button  class=" text-brown underline underline-offset-1" onclick="javascript:location.href='/protSociety/new'" type="button">Regístrate</button></p>
       </div>
       {{!-- <div class="flex justify-center">

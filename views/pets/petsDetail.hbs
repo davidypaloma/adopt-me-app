@@ -2,19 +2,19 @@
 
 
 <div class="flex justify-center">
-  <div class="border-[12px] border-brown w-11/12 h-52 flex justify-center items-center rounded-[30px] mt-11">
-  <img class="w-11/12 h-40 object-cover rounded-2xl object-top" src="{{pet.image}}"/>
+  <div class="border-[12px] border-brown w-11/12 h-[260px] flex justify-center items-center rounded-[30px] mt-11">
+  <img class="w-11/12 h-52 object-cover rounded-2xl object-top" src="{{pet.image}}"/>
   </div>
 </div>
 
-<div class="text-brown font-lobster text-5xl text-center mt-4 mb-4">{{pet.name}}</div>
+<div class="text-brown font-lobster text-4xl text-center mt-4 mb-4">{{pet.name}}</div>
 
 <div class="flex justify-center">
   <div class="grid grid-cols-2 gap-4 w-11/12">
-    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.age}}</div>
-    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.sex}}</div>
-    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.protSociety.location}}</div>
-    <div class="h-14 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.breed}}</div>
+    <div class="h-10 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.age}}</div>
+    <div class="h-10 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.sex}}</div>
+    <div class="h-10 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.protSociety.location}}</div>
+    <div class="h-10 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.breed}}</div>
   </div>
 </div>
 
@@ -25,6 +25,9 @@
 <div class="flex justify-center mt-4">
   <div class="grid grid-cols-2 gap-4 w-11/12">
     <div class="h-8 text-green bg-brown rounded-full text-lg flex justify-center items-center">{{pet.protSociety.name}}</div>
-    <div class="h-8 text-green bg-brown rounded-full text-lg flex justify-center items-center">Contáctanos</div>
+    <div class="h-8 text-green bg-brown rounded-full text-lg flex justify-center items-center">
+      <img class="h-1" src="/img/MAIL_ICON_GREEN.png" alt="Mail icon">
+      <p>Contáctanos</p>
+    </div>
   </div>
 </div>
