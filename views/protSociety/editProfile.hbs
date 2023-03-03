@@ -3,7 +3,7 @@
     <img class="absolute mt-24 w-1/6" src="/img/DOG.png" alt="Dog Logo" />
   </div>
   <h1
-    class="mt-[4.5rem] text-center font-lobster text-5xl uppercase"
+    class="mt-[4.5rem] mb-6 text-center font-lobster text-5xl uppercase"
   >{{protSociety.name}}</h1>
 
   <div class="absolute w-screen">
@@ -28,15 +28,16 @@
           for="name"
         >Nombre</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
-            class="mr-2 h-5 w-5 text-green"
-            src="/img/USER_ICON.png"
+            class="mr-2 h-4 w-4 text-green opacity-50"
+            src="/img/USER_ICON_GREEN.png"
             alt="user icon"
           />
           <input
-            class="appearance-none"
+            class="w-11/12 bg-transparent opacity-50 focus:outline-green"
             name="name"
             type="text"
             id="name"
@@ -51,15 +52,16 @@
           for="email"
         >Email</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
-            class="mr-2 h-4 w-5 text-green"
-            src="/img/MAIL_ICON.png"
+            class="mr-2 h-3 w-4 text-green opacity-50"
+            src="/img/MAIL_ICON_GREEN.png"
             alt="user icon"
           />
           <input
-            class="appearance-none border-none focus:outline-none"
+            class="w-11/12 bg-transparent opacity-50 focus:outline-green"
             name="email"
             type="email"
             id="email"
@@ -74,14 +76,16 @@
           for="location"
         >Localización</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
-            class="mr-2 h-4 w-5 text-green"
-            src="/img/MAIL_ICON.png"
+            class="mr-2 h-4 w-4 text-green opacity-50"
+            src="/img/LOCATION_ICON_GREEN.png"
             alt="user icon"
           />
           <input
+            class="w-11/12 bg-transparent opacity-50 focus:outline-green"
             name="location"
             type="text"
             id="location"
@@ -96,14 +100,16 @@
           for="website"
         >Página Web</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
-            class="mr-2 h-4 w-5 text-green"
-            src="/img/MAIL_ICON.png"
+            class="mr-2 h-3 w-4 text-green opacity-50"
+            src="/img/MAIL_ICON_GREEN.png"
             alt="user icon"
           />
           <input
+            class="w-11/12 bg-transparent opacity-50 focus:outline-green"
             name="website"
             type="text"
             id="website"
@@ -118,14 +124,16 @@
           for="password"
         >Contraseña</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-red px-3 py-1 font-poppins text-xl font-extralight text-brown"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
-            class="mr-2 h-4 w-5 text-green"
-            src="/img/MAIL_ICON.png"
+            class="mr-2 h-3 w-4 text-green opacity-50"
+            src="/img/MAIL_ICON_GREEN.png"
             alt="user icon"
           />
           <input
+            class="w-11/12 bg-transparent opacity-50"
             name="password"
             type="password"
             id="password"
@@ -136,10 +144,11 @@
       </div>
 
       <button
-        class="mx-auto mt-8 block w-6/12 items-center rounded-full bg-red px-3 py-1 text-center font-poppins text-sm font-extralight text-brown"
+        class="mx-auto mt-8 block w-6/12 items-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-lg font-medium text-green"
         type="submit"
       >Editar</button>
     </form>
   </div>
-  <div class="mt-[100px] h-screen rounded-t-3xl bg-green"></div>
+
+  <div class="h-screen rounded-t-3xl bg-green"></div>
 </div>
