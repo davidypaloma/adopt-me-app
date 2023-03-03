@@ -27,7 +27,7 @@
           for="name"
         >Nombre</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green {{#if errors.name}}ring ring-red{{/if}}"
           {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
@@ -40,6 +40,7 @@
             name="name"
             type="text"
             id="name"
+            value="{{protSociety.name}}"
             {{! placeholder="Nombre" }}
           />
         </div>
@@ -51,7 +52,7 @@
           for="email"
         >Email</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green {{#if errors.email}}ring ring-red{{/if}}"
           {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
@@ -64,6 +65,7 @@
             name="email"
             type="email"
             id="email"
+            value="{{protSociety.email}}"
             {{! placeholder="Email" }}
           />
         </div>
@@ -75,7 +77,7 @@
           for="location"
         >Localización</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green {{#if errors.location}}ring ring-red{{/if}}"
           {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
@@ -88,6 +90,7 @@
             name="location"
             type="text"
             id="location"
+            value="{{protSociety.location}}"
             {{! placeholder="Localización" }}
           />
         </div>
@@ -112,6 +115,7 @@
             name="website"
             type="text"
             id="website"
+            value="{{protSociety.website}}"
             {{! placeholder="Página Web" }}
           />
         </div>
@@ -123,7 +127,7 @@
           for="password"
         >Contraseña</label>
         <div
-          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green"
+          class="mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-sm font-medium text-green {{#if errors.password}}ring ring-red{{/if}}"
           {{! class="mt-1 ml-5 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown" }}
         >
           <img
@@ -136,6 +140,7 @@
             name="password"
             type="password"
             id="password"
+            value="{{protSociety.password}}"
             {{! placeholder="Contraseña"  }}
           />
         </div>

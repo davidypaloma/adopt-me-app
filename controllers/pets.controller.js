@@ -2,11 +2,6 @@ const Pet = require('../models/pets.model')
 const mongoose = require('mongoose')
 
 module.exports.list = ((req, res, next) => {
-  // const sessionId = req.headers.cookie.split('=')[1] //sessionId=xxxx
-
-  // if (!sessions[sessionId]) {
-  //   //error
-  // }
 
   const criteria = {};
 
@@ -58,7 +53,13 @@ module.exports.doCreate = ((req, res, next) => {
     .then((pet) => {
       res.redirect(`/pets/${pet.id}`)
     })
-    .catch(next)
+    .catch(error => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.render('pets/newPet', { errors: error.errors, pet: req.body })
+      } else {
+        next(error)
+      }
+    })
 })
 
 module.exports.update = ((req, res, next) => {
@@ -72,5 +73,12 @@ module.exports.doUpdate = ((req, res, next) => {
   Pet.findByIdAndUpdate(req.params.id, req.body)
     .then((pet) => {
       res.redirect(`/pets/${pet.id}`)
+    })
+    .catch(error => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.render('pets/updatePet', { errors: error.errors, pet: req.body })
+      } else {
+        next(error)
+      }
     })
 })
