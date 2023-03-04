@@ -13,7 +13,6 @@ module.exports.doCreate = (req, res, next) => {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        console.error(error.errors, req.body)
         res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: req.body })
       } else {
         next(error)
@@ -22,7 +21,11 @@ module.exports.doCreate = (req, res, next) => {
 }
 
 module.exports.login = (req, res, next) => {
-  res.render('protSociety/login')
+  if (req.protSociety) {
+    res.redirect('/pets')
+  } else {
+    res.render('protSociety/login')
+  }
 }
 
 const sessions = {}
@@ -33,26 +36,21 @@ module.exports.doLogin = (req, res, next) => {
       bcrypt.compare(req.body.password, protSociety.password)
         .then(ok => {
           if (ok) {
-            //Esto irá con una librería de express-session
             req.session.protSocietyId = protSociety.id
-            // sessions[sessionId] = protSociety.id
-
-            ///
-
             res.set('Set-Cookie', `sessionid=${req.session.protSocietyId}`)
             res.redirect('/pets')
           }
         })
         .catch(next)
     })
-    .catch(next)
-  //error => {
-  //   if (error instanceof mongoose.Error.ValidationError) {
-  //     res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: req.body })
-  //   } else {
-  //     next(error)
-  //   }
-  // }
+    .catch(error => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: req.body })
+      } else {
+        next(error)
+      }
+    })
+
 }
 
 module.exports.profile = (req, res, next) => {
@@ -72,7 +70,13 @@ module.exports.edit = (req, res, next) => {
 }
 
 module.exports.doEdit = (req, res, next) => {
-  ProtSociety.findByIdAndUpdate(req.params.id, req.body)
+  if (!req.body.password) {
+    delete req.body.password
+  }
+
+  Object.assign(req.protSociety, req.body)
+
+  req.protSociety.save()
     .then((protSociety) => {
       res.redirect(`/profile/${protSociety.id}`)
     })
