@@ -1,69 +1,41 @@
 {{> backgroundSmall}}
-
+<div class="bg-green h-screen rounded-t-3xl mt-28">
     <div>
         <form class="w-full max-w-sm pt-24" action="/pets" method="POST">
 
             <div class="mx-8 mb-6">
                 <label for="text"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="name" type="emtextail" id="name" placeholder="Nombre"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="name" type="emtextail" id="name" placeholder="Nombre" value="{{pet.name}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="name" type="emtextail" id="name" placeholder="Nombre" value="{{pet.name}}" required autocomplete="off"/>
             </div>
 
             <div class="mx-8 mb-6">
                 <label for="image"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen" value="{{pet.image}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="image" type="text" id="image" placeholder="Escribe la url de tu imagen" value="{{pet.image}}" autocomplete="off"/>
             </div>
 
             <div class="mx-8 mb-6">
                 <label for="class"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?" value="{{pet.class}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?" value="{{pet.class}}" required autocomplete="off"/>
             </div>
 
             <div class="mx-8 mb-6">
                 <label for="age"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="age" type="text" id="age" placeholder="Edad"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="age" type="text" id="age" placeholder="Edad" value="{{pet.age}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="age" type="text" id="age" placeholder="Edad" value="{{pet.age}}" required autocomplete="off"/>
             </div>
 
             <div class="mx-8 mb-6">
                 <label for="sex"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="sex" type="text" id="sex" placeholder="Sexo"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="sex" type="text" id="sex" placeholder="Sexo" value="{{pet.sex}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="sex" type="text" id="sex" placeholder="Sexo" value="{{pet.sex}}" required autocomplete="off"/>
             </div>
 
             <div class="mx-8 mb-6">
                 <label for="breed"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="breed" type="text" id="breed" placeholder="Raza"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="breed" type="text" id="breed" placeholder="Raza" value="{{pet.breed}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="breed" type="text" id="breed" placeholder="Raza" value="{{pet.breed}}" required autocomplete="off"/>
             </div>            
 
             <div class="mx-8 mb-6">
                 <label for="energyLevel"></label>
-<<<<<<< HEAD
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja"/>
-=======
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja" value="{{pet.energyLevel}}"/>
->>>>>>> 9bdc5503d1d634ea1fc1a43edeb37559bd924f5c
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja" value="{{pet.energyLevel}}" required autocomplete="off"/>
             </div>
 
             <div class="mx-8 mb-6">
@@ -73,7 +45,7 @@
 
             <div class="mx-8 mb-6">
                 <label for="description"></label>
-                <textarea name="description" placeholder="Escribe la historia de este peludito" rows="4" cols="38" class="bg-brown rounded-xl focus:outline-none text-green px-2 placeholder-green placeholder-opacity-50 text-center"></textarea>
+                <textarea name="description" placeholder="Escribe la historia de este peludito" rows="4" cols="38" class="bg-brown rounded-xl focus:outline-none text-green px-2 placeholder-green placeholder-opacity-50 text-center" required autocomplete="off"></textarea>
             </div>
 
             <div class="mx-20 mb-6">
@@ -86,3 +58,5 @@
             </div>
         </form>
     </div>
+
+</div>
