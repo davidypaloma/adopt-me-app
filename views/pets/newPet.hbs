@@ -1,118 +1,60 @@
 {{> backgroundSmall}}
 
     <div>
-        {{!-- <form action="/pets" method="POST" class="grid grid-rows-4 gap 4">
-            <div class="bg-red w-1/2 flex justify-center">
-                <label for="name"></label>
-                <input class="appearance-none bg-red" name="name" type="text" id="name" placeholder="Nombre">
-            </div>
+        <form class="w-full max-w-sm pt-24" action="/pets" method="POST">
 
-            <div>
-                <label for="image">Pet image</label>
-                <input name="image" type="text" id="image">
-            </div>
-
-             <div>
-                <label for="class">Pet class</label>
-                <input name="class" type="text" id="class">
-            </div>
-
-            <div>
-                <label for="age">Pet age</label>
-                <input name="age" type="text" id="age">
-            </div>
-
-            <div>
-                <label for="sex">Pet sex</label>
-                <input name="sex" type="text" id="sex">
-            </div>
-
-            <div>
-                <label for="breed">Pet breed</label>
-                <input name="breed" type="text" id="breed">
-            </div>
-
-            <div>
-                <label for="energyLevel">Pet energy</label>
-                <input name="energyLevel" type="text" id="energyLevel">
-            </div>
-
-            <div>
-                <label for="healthStatus">Pet health</label>
-                <input name="healthStatus" type="text" id="healthStatus">
-            </div>
-
-            <div>
-                <label for="isAdopted">Estado de adopción</label>
-                <input name="isAdopted" type="checkbox" id="isAdopted">
-            </div>
-
-            <div>
-                <label for="description">Añade una descripción</label>
-                <input name="description" type="text" id="description">
-            </div>
-
-            <div>
-                <label for="protSociety">Protectora</label>
-                <input name="protSociety" type="text" id="protSociety" value={{currentProtSociety.name}} disabled>
-            </div>
-
-
-            <button type="submit">Nuevo</button>
-        </form> --}}
-
-        <form class="w-full max-w-sm pt-24" action="/login" method="POST">
-
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="text"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="name" type="emtextail" id="name" placeholder="Nombre"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="name" type="emtextail" id="name" placeholder="Nombre"/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="image"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen"/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="class"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?"/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="age"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="age" type="text" id="age" placeholder="Edad"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="age" type="text" id="age" placeholder="Edad"/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="sex"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="sex" type="text" id="sex" placeholder="Sexo"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="sex" type="text" id="sex" placeholder="Sexo"/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="breed"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="breed" type="text" id="breed" placeholder="Raza"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="breed" type="text" id="breed" placeholder="Raza"/>
             </div>            
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="energyLevel"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja"/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja"/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="isAdopted"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light" name="isAdopted" type="text" id="isAdopted" value="false" hidden/>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="isAdopted" type="text" id="isAdopted" value="false" hidden/>
             </div>
 
-            <div class="mx-8 mb-2">
+            <div class="mx-8 mb-6">
                 <label for="description"></label>
-                <textarea name="description rows"></textarea>
+                <textarea name="description" placeholder="Escribe la historia de este peludito" rows="4" cols="38" class="bg-brown rounded-xl focus:outline-none text-green px-2 placeholder-green placeholder-opacity-50 text-center"></textarea>
             </div>
 
+            <div class="mx-20 mb-6">
+                <label for="protSociety"></label>
+                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 opacity-50" name="protSociety" type="text" id="protSociety" value="{{currentProtSociety.name}}" disabled/>
+            </div>
 
+            <div class="flex justify-center">
+                <button class="w-2/3 h-10 bg-brown text-green rounded-full" type="submit">Añadir nuevo peludito</button>
+            </div>
         </form>
-
-
-
-
-
     </div>

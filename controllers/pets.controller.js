@@ -42,7 +42,6 @@ module.exports.detail = ((req, res, next) => {
   Pet.findById(req.params.id)
     .populate('protSociety')
     .then((pet) => {
-      console.log(pet)
       res.render('pets/petsDetail', { pet })
     })
     .catch(next)
