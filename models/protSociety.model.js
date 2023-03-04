@@ -32,7 +32,7 @@ const protSocietySchema = new Schema({
   password: {
     type: String,
     required: [true, "La contraseña es obligatoria"],
-    minLength: [8, "La contraseña debe contener más de 8 caracteres"]
+    minLength: [8, "La contraseña debe contener al menos 8 caracteres"]
   }
 })
 

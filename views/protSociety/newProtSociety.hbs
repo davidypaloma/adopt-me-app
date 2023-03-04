@@ -2,7 +2,7 @@
   <div class="flex items-center justify-center">
     <img class="absolute mt-24 w-1/6" src="/img/DOG.png" alt="Dog Logo" />
   </div>
-  <h1 class="mt-[4.5rem] mb-6 text-center font-lobster text-4xl">NUEVA
+  <h1 class="mt-[4.5rem] mb-8 text-center font-lobster text-4xl">NUEVA
     PROTECTORA</h1>
 
   <div class="absolute w-screen">
@@ -20,112 +20,122 @@
         </div>
       </div>
 
-    <form action="/protSociety" method="POST">
-      <div
-        class="mt-15 ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.name}}border-b-rose-300 text-rose-300 text-sm  block{{/if}}" 
-      >
-        <img
-          class="mr-2 h-auto w-4"
-          src="/img/USER_ICON.png"
-          alt="user icon"
-        />
-        <input
-          class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
-          name="name"
-          type="text"
-          id="name"
-          value="{{protSociety.name}}"
-          autocomplete="off"
-          placeholder="Nombre" 
-        />
-      </div>
+    <form class="mt-5" action="/protSociety" method="POST">
+      <div class="h-14 mt-3">
+        <div
+          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.name}}border-b-rose-300 text-sm block{{/if}}" 
+        >
+          <img
+            class="mr-2 h-auto w-4"
+            src="/img/USER_ICON.png"
+            alt="user icon"
+          />
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="name"
+            type="text"
+            id="name"
+            value="{{protSociety.name}}"
+            autocomplete="off"
+            placeholder="Nombre" 
+          />
+        </div>
         {{#if errors.name}}
-          <p class="ml-8 text-sm text-rose-300 ">*{{errors.name.message}}</p>
+          <p class="ml-8 text-xs text-rose-300 ">*{{errors.name}}</p>
         {{/if}}
-
-      <div
-        class="mt-8 ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.email}}border-b-rose-300 text-rose-300  text-sm  block{{/if}}"
-      >
-        <img
-          class="mr-2 h-auto w-4"
-          src="/img/MAIL_ICON.png"
-          alt="user icon"
-        />
-        <input
-          class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
-          name="email"
-          type="email"
-          id="email"
-          value="{{protSociety.email}}"
-          placeholder="Email"
-        />
       </div>
+
+      <div class="h-14 mt-3">
+        <div
+          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.email}}border-b-rose-300  text-sm  block{{/if}}"
+        >
+          <img
+            class="mr-2 h-auto w-4"
+            src="/img/MAIL_ICON.png"
+            alt="user icon"
+          />
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="email"
+            type="email"
+            id="email"
+            value="{{protSociety.email}}"
+            placeholder="Email"
+          />
+        </div>
         {{#if errors.email}}
-          <p class="ml-8 text-sm text-rose-300 ">*{{errors.email.message}}</p>
+          <p class="ml-8 text-xs text-rose-300 ">*{{errors.email}}</p>
         {{/if}}
-
-      <div
-        class="mt-8 ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.location}}border-b-rose-300 text-rose-300  text-sm  block{{/if}}" 
-      >
-        <img
-          class="mr-2 h-auto w-4"
-          src="/img/PLUS_ICON.png"
-          alt="user icon"
-        />
-        <input
-          class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
-          name="location"
-          type="text"
-          id="location"
-          value="{{protSociety.location}}"
-          placeholder="Localización" 
-        />
       </div>
+
+      <div class="h-14 mt-3">
+        <div
+          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.location}}border-b-rose-300 text-sm  block{{/if}}" 
+        >
+          <img
+            class="mr-2 h-auto w-4"
+            src="/img/LOCATION_ICON_BROWN.png"
+            alt="user icon"
+          />
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="location"
+            type="text"
+            id="location"
+            value="{{protSociety.location}}"
+            placeholder="Localización" 
+          />
+        </div>
         {{#if errors.location}}
-          <p class="ml-8 text-sm text-rose-300 ">*{{errors.location.message}}</p>
+          <p class="ml-8 text-xs text-rose-300 ">*{{errors.location}}</p>
         {{/if}}
-
-      <div
-        class="mt-8 ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown"
-      >
-        <img
-          class="mr-2 h-auto w-4"
-          src="/img/MAIL_ICON.png"
-          alt="user icon"
-        />
-        <input
-          class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
-          name="website"
-          type="text"
-          id="website"
-          value="{{protSociety.website}}"
-          placeholder="Página Web"
-        />
       </div>
 
-      <div
-        class="mt-8 ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.password}}border-b-rose-300 text-rose-300  text-sm  block{{/if}}"
-      >
-        <img
-          class="mr-2 h-auto w-4"
-          src="/img/PASS_ICON.png"
-          alt="user icon"
-        />
-        <input
-          class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
-          name="password"
-          type="password"
-          id="password"
-          value="{{protSociety.password}}"
-          placeholder="Contraseña" 
-        />
-      </div> 
+      <div class="h-14 mt-3">
+        <div
+          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown"
+        >
+          <img
+            class="mr-2 h-auto w-4"
+            src="/img/WEB-ICON.svg"
+            alt="user icon"
+          />
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="website"
+            type="text"
+            id="website"
+            value="{{protSociety.website}}"
+            placeholder="Página Web"
+          />
+        </div>
+      </div>
+
+      <div class="h-14 mt-3">
+        <div
+          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.password}}border-b-rose-300 text-sm  block{{/if}}"
+        >
+          <img
+            class="mr-2 h-auto w-4"
+            src="/img/PASS_ICON.png"
+            alt="user icon"
+          />
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="password"
+            type="password"
+            id="password"
+            value="{{protSociety.password}}"
+            placeholder="Contraseña" 
+          />
+        </div> 
         {{#if errors.password}}
-          <p class="ml-8 text-sm text-rose-300 ">*{{errors.password.message}}</p>
+          <p class="ml-8 text-xs text-rose-300 ">*{{errors.password}}</p>
         {{/if}}
+      </div>
 
       <button
-        class="mx-auto mt-8 block w-6/12 items-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-lg font-medium text-green"
+        class="mx-auto mt-6 block w-6/12 items-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-lg font-medium text-green"
         type="submit"
       >Crear</button>
     </form>

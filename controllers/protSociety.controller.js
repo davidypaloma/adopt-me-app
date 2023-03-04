@@ -7,9 +7,21 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
-  ProtSociety.create(req.body)
-    .then(() => {
-      res.redirect('/login')
+  
+  // function renderWithErrors(errors) {
+
+  // }
+  
+  ProtSociety.findOne({ email: req.body.email })
+    .then(protSociety => {
+      if (protSociety) {
+        res.render('newProtSociety', { errors: { email: 'email already registered' }, protSociety: req.body })
+      } else {
+        return ProtSociety.create(req.body)
+          .then(() => {
+            res.redirect('/login')
+          })
+      }
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -72,6 +84,9 @@ module.exports.edit = (req, res, next) => {
 module.exports.doEdit = (req, res, next) => {
   if (!req.body.password) {
     delete req.body.password
+  }
+  if (!req.body.name) {
+    delete req.body.name
   }
 
   Object.assign(req.protSociety, req.body)
