@@ -1,29 +1,31 @@
 const Pet = require('../models/pets.model')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const ProtSociety = require('../models/protSociety.model');
 
-module.exports.list = ((req, res, next) => {
+module.exports.list = async (req, res, next) => {
 
   const criteria = {};
 
   if (req.query.name) {
-    criteria.name = new RegExp(req.query.name)
+    criteria.name = new RegExp(req.query.name.trim(), "i")
   }
 
   if (req.query.class) {
-    criteria.class = new RegExp(req.query.class)
+    criteria.class = new RegExp(req.query.class.trim(), "i")
   }
 
   if (req.query.sex) {
-    criteria.sex = req.query.sex
+    criteria.sex = new RegExp(req.query.sex.trim(), "i")
   }
 
   if (req.query.breed) {
-    criteria.breed = req.query.breed
+    criteria.breed = new RegExp(req.query.breed.trim(), "i")
   }
 
-  // if (req.query.location) {
-  //   criteria.protSociety = {location: req.query.location}
-  // }
+  if (req.query.location) {
+    const protsocieties = await ProtSociety.find({ location: new RegExp(req.query.location, "i") })
+    criteria.protSociety = { $in: protsocieties.map(x => x._id) }
+  }
 
   Pet.find(criteria)
     .populate('protSociety')
@@ -31,13 +33,12 @@ module.exports.list = ((req, res, next) => {
       res.render('pets/petsList', { pets })
     })
     .catch(next)
-})
+}
 
 module.exports.detail = ((req, res, next) => {
   Pet.findById(req.params.id)
     .populate('protSociety')
     .then((pet) => {
-      console.log(pet)
       res.render('pets/petsDetail', { pet })
     })
     .catch(next)

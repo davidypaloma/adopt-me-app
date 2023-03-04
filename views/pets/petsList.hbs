@@ -1,68 +1,31 @@
 {{> backgroundSmall}}
 
+    <div class="w-full absolute flex flex-col justify-center mt-48">
+      <div class="mb-5">
+        <p class="text-brown font-lobster text-5xl text-center -mt-5">Todos nuestros<br/>peludos<p>
+      </div>
 
-    {{!-- <form>
-      <input
-        value="{{query.name}}"
-        type="text"
-        name="name"
-        id=""
-        placeholder="Nombre"
-      />
-
-      <input
-        value="{{query.class}}"
-        type="text"
-        name="class"
-        id=""
-        placeholder="Tipo de animal"
-      />
-
-      <input
-        value="{{query.sex}}"
-        type="text"
-        name="sex"
-        id=""
-        placeholder="Sexo"
-      />
-
-      <input
-        value="{{query.breed}}"
-        type="text"
-        name="breed"
-        id=""
-        placeholder="Raza"
-      />
-      <button type="submit">search</button>
-    </form> --}}
-
-    <div class="w-screen absolute flex justify-center mt-14">
-      <p class="text-brown font-lobster text-5xl text-center">Todos nuestros<br/>peludos<p>
-    </div>
-
-
-    <div class="flex justify-center absolute w-full">
-      <div class="overflow-y-auto mt-44 h-screen w-full mx-8">
-        {{#each pets as |pet|}}
-
-          <div class="bg-brown h-40 w-full rounded-2xl mb-8 flex justify-around items-center drop-shadow-xl">
-            <img class="w-32 h-32 object-cover rounded-2xl ml-2" src="{{pet.image}}"/>
-            <div class="w-36 h-32 rounded-xl">
-              <p class="font-lobster text-green">Nombre: <span class="font-poppins">{{pet.name}}</span></p>
-              <p class="font-lobster text-green">Edad: <span class="font-poppins">{{pet.age}}</span></p>
-              <p class="font-lobster text-green">Sexo: <span class="font-poppins">{{pet.sex}}</span></p>
-              <p class="font-lobster text-green">Lugar: <span class="font-poppins">{{pet.protSociety.location}}</span></p>
-
-              <a href="/pets/{{pet.id}}">
-                <div class="bg-green w-28 h-5 rounded-full flex justify-center items-center text-sm text-brown mt-3">
-                <p>Conóceme</p>
-                </div>
-              </a>
-
+      <div class="w-80 m-auto">
+        <div class="overflow-y-auto h-[500px]">
+          {{#each pets as |pet|}}
+  
+            <div class="bg-brown h-40 w-full rounded-2xl mb-8 flex justify-around items-center drop-shadow-xl">
+              <img class="w-32 h-32 object-cover rounded-2xl ml-2" src="{{pet.image}}"/>
+              <div class="w-36 h-32 rounded-xl">
+                <p class="font-lobster text-green">Nombre: <span class="font-poppins">{{pet.name}}</span></p>
+                <p class="font-lobster text-green">Edad: <span class="font-poppins">{{pet.age}}</span></p>
+                <p class="font-lobster text-green">Sexo: <span class="font-poppins">{{pet.sex}}</span></p>
+                <p class="font-lobster text-green">Lugar: <span class="font-poppins">{{pet.protSociety.location}}</span></p>
+  
+                <a href="/pets/{{pet.id}}">
+                  <div class="bg-green w-28 h-5 rounded-full flex justify-center items-center text-sm text-brown mt-3">
+                  <p>Conóceme</p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
-</div>
+   <div class="bg-green h-screen rounded-t-3xl mt-28"></div>
