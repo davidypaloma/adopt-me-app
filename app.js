@@ -33,7 +33,7 @@ app.use('/', router)
 app.use((err, req, res, next) => {
   console.error(err)
   res.status(500)
-  res.send('Ops, ha sucedido un error')
+  res.render("errors/500")
 })
 
 
