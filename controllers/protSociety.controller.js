@@ -7,15 +7,15 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
-  
-  // function renderWithErrors(errors) {
 
-  // }
-  
+  function renderWithErrors(errors) {
+    res.render('protSociety/newProtSociety', { errors, protSociety: req.body })
+  }
+
   ProtSociety.findOne({ email: req.body.email })
     .then(protSociety => {
       if (protSociety) {
-        res.render('newProtSociety', { errors: { email: 'email already registered' }, protSociety: req.body })
+        renderWithErrors({email: 'email ya registrado'})
       } else {
         return ProtSociety.create(req.body)
           .then(() => {
@@ -25,7 +25,7 @@ module.exports.doCreate = (req, res, next) => {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: req.body })
+        renderWithErrors(error.errors)
       } else {
         next(error)
       }
@@ -45,7 +45,7 @@ const sessions = {}
 module.exports.doLogin = (req, res, next) => {
   ProtSociety.findOne({ email: req.body.email })
     .then((protSociety) => {
-      bcrypt.compare(req.body.password, protSociety.password)
+      return bcrypt.compare(req.body.password, protSociety.password)
         .then(ok => {
           if (ok) {
             req.session.protSocietyId = protSociety.id
@@ -53,7 +53,6 @@ module.exports.doLogin = (req, res, next) => {
             res.redirect('/pets')
           }
         })
-        .catch(next)
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -62,7 +61,6 @@ module.exports.doLogin = (req, res, next) => {
         next(error)
       }
     })
-
 }
 
 module.exports.profile = (req, res, next) => {
