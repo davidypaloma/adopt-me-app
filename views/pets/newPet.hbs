@@ -1,62 +1,179 @@
 {{> backgroundSmall}}
-<div class="bg-green h-screen rounded-t-3xl mt-28">
-    <div>
-        <form class="w-full max-w-sm pt-24" action="/pets" method="POST">
+<div class="mt-28 h-screen rounded-t-3xl bg-green">
+  <form class="w-full max-w-sm" action="/pets" method="POST">
 
-            <div class="mx-8 mb-6">
-                <label for="text"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="name" type="emtextail" id="name" placeholder="Nombre" value="{{pet.name}}" required autocomplete="off"/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="image"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="image" type="text" id="image" placeholder="Escribe la url de tu imagen" value="{{pet.image}}" autocomplete="off"/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="class"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="class" type="text" id="class" placeholder="¿Perro, gato, quizás un dinosaurio?" value="{{pet.class}}" required autocomplete="off"/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="age"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="age" type="text" id="age" placeholder="Edad" value="{{pet.age}}" required autocomplete="off"/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="sex"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="sex" type="text" id="sex" placeholder="Sexo" value="{{pet.sex}}" required autocomplete="off"/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="breed"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="breed" type="text" id="breed" placeholder="Raza" value="{{pet.breed}}" required autocomplete="off"/>
-            </div>            
-
-            <div class="mx-8 mb-6">
-                <label for="energyLevel"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 " name="energyLevel" type="text" id="energyLevel" placeholder="Energía: Intensa, normal o baja" value="{{pet.energyLevel}}" required autocomplete="off"/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="isAdopted"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50" name="isAdopted" type="text" id="isAdopted" value="false" hidden/>
-            </div>
-
-            <div class="mx-8 mb-6">
-                <label for="description"></label>
-                <textarea name="description" placeholder="Escribe la historia de este peludito" rows="4" cols="38" class="bg-brown rounded-xl focus:outline-none text-green px-2 placeholder-green placeholder-opacity-50 text-center" required autocomplete="off"></textarea>
-            </div>
-
-            <div class="mx-20 mb-6">
-                <label for="protSociety"></label>
-                <input class="w-full text-center bg-brown rounded-full appearance-none border-none focus:outline-none placeholder-green text-green font-light placeholder-opacity-50 opacity-50" name="protSociety" type="text" id="protSociety" value="{{currentProtSociety.name}}" disabled/>
-            </div>
-
-            <div class="flex justify-center">
-                <button class="w-2/3 h-10 bg-brown text-green rounded-full" type="submit">Añadir nuevo peludito</button>
-            </div>
-        </form>
+    <div class="flex-column relative flex justify-center">
+      <div
+        id="modal-url"
+        class="absolute bottom-20 z-10 hidden h-8 w-10/12 items-center justify-start rounded-full bg-brown px-1 py-1 font-poppins text-sm font-medium text-green opacity-90"
+      >
+        <div class="absolute top-0 right-0 -mt-4 flex gap-2">
+          <button
+            onclick="onCrossClick()"
+            type="button"
+            class="flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-white"
+          >
+            <span class="fa fa-times text-red"></span>
+          </button>
+          <button
+            onclick="onCheckClick()"
+            type="button"
+            class="flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-white"
+          >
+            <span class="fa fa-check text-green"></span>
+          </button>
+        </div>
+        <input
+          class="w-11/12 bg-transparent placeholder-green focus:outline-none"
+          name="image"
+          type="text"
+          id="image"
+          placeholder="Escribe la url de tu imagen"
+        />
+      </div>
+      <div
+        class="mt-11 flex h-52 w-72 items-center justify-center rounded-[30px] border-[12px] border-brown"
+      >
+        <div>
+          <img id="protSocietyImage" class="h-40 w-60 rounded-2xl object-cover object-top" src="" />
+          <button
+            onclick="onCameraClick()"
+            type="button"
+            class="absolute -bottom-3 right-10 flex h-[2rem] w-[2.5rem] items-center justify-center rounded-[10px] bg-white"
+          >
+            <span class="fa fa-camera text-green"></span>
+          </button>
+        </div>
+      </div>
     </div>
 
+    <div
+      class=" mt-5 flex h-8 items-center justify-center text-center font-lobster text-xl uppercase text-brown"
+    >
+      <p>{{currentProtSociety.name}}</p>
+    </div>
+
+    <div
+      class="mb-5 ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown"
+    >
+      <input
+        class="w-11/12 bg-transparent text-start placeholder-brown placeholder:opacity-50 focus:outline-none"
+        name="name"
+        type="text"
+        id="name"
+        placeholder="Nombre"
+        value="{{pet.name}}"
+        required
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="flex justify-center">
+      <div class="grid w-10/12 grid-cols-2 gap-4">
+        <div
+          class="flex h-8 items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown"
+        >
+          <input
+            class="bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="age"
+            type="text"
+            id="age"
+            placeholder="Edad"
+            value="{{pet.age}}"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+        <div
+          class="h-18 flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown"
+        >
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="sex"
+            type="text"
+            id="sex"
+            placeholder="Sexo"
+            value="{{pet.sex}}"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+
+
+        <div
+          class="h-18 flex items-center justify-start border-b border-brown px-1 py-1 text-xs font-medium text-brown"
+        >
+          <span class="fa fa-battery-three-quarters text-brown"></span>
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="energyLevel"
+            type="text"
+            id="energyLevel"
+            placeholder="Intensa, media o baja"
+            value="{{pet.energyLevel}}"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div
+          class="h-18 flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown"
+        >
+          <input
+            class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+            name="breed"
+            type="text"
+            id="breed"
+            placeholder="Raza"
+            value="{{pet.breed}}"
+            required
+            autocomplete="off"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-center">
+      <textarea
+        name="description"
+        placeholder="Escribe la historia de este peludito"
+        rows="4"
+        cols="38"
+        class="rounded-xl bg-brown bg-opacity-50 p-2 px-2 text-start text-base text-brown placeholder-brown focus:outline-none"
+        required
+        autocomplete="off"
+      >{{pet.description}}</textarea>
+    </div>
+
+    <div class="mt-4 flex justify-center">
+      <button
+        class="h-18 w-6/12 px-3 py-1 font-medium rounded-full bg-brown text-green"
+        type="submit"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+
+  <script lang="js">
+    function onCameraClick() { 
+      const imageUrlInput = document.querySelector('#modal-url')
+      imageUrlInput.classList.remove('hidden') 
+      imageUrlInput.classList.add('flex')
+    } 
+    function onCrossClick() { 
+      const imageUrlInput = document.querySelector('#modal-url') 
+      imageUrlInput.classList.add('hidden')
+      imageUrlInput.classList.remove('flex') 
+    } 
+    function onCheckClick() { 
+      const imageUrlInput = document.querySelector('#modal-url') 
+      const protSocietyImage = document.querySelector('#protSocietyImage') 
+      const imageInputValue =  document.querySelector('#modal-url input').value
+      imageUrlInput.classList.add('hidden') 
+      imageUrlInput.classList.remove('flex')
+      protSocietyImage.src = imageInputValue 
+    }
+  </script>
 </div>

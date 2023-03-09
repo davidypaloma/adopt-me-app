@@ -1,0 +1,94 @@
+<form id="filtersMenu" method="GET" action="/pets" class="absolute z-40 h-80 w-full bg-green top-[-400px] flex lg:hidden">
+  <div class="w-1/2">
+    <img class="pt-4 pl-4 h-12" src="/img/LOGO_BROWN.png" alt="AdoptMe Logo"/>
+    <img class="w-11/12 mt-4 ml-2" src="/img/PETS.png" alt="Pets AdoptMe"/>
+  </div>
+  <div class="w-1/2 pt-4">
+    <div class="bg-brown w-11/12 rounded-full px-2 my-3 flex items-center">
+      <img src="/img/SEARCH_ICON_GREEN.png" alt="Search" class="h-4">
+      <input
+        class="w-full bg-transparent rounded px-2 text-green focus:border-none outline-none"
+        value="{{query.name}}"
+        type="text"
+        name="name"
+        id=""
+        placeholder="Nombre"
+        autocomplete="off"
+      />
+    </div>
+    <div class="bg-brown w-11/12 rounded-full px-2 my-3 flex items-center">
+      <img src="/img/SEARCH_ICON_GREEN.png" alt="Search" class="h-4">
+      <input
+        class="w-full bg-transparent rounded px-2 text-green focus:border-none outline-none"
+        value="{{query.class}}"
+        type="text"
+        name="class"
+        id=""
+        placeholder="Tipo de animal"
+        autocomplete="off"
+      />
+    </div>
+    <div class="bg-brown w-11/12 rounded-full px-2 my-3 flex items-center">
+      <img src="/img/SEARCH_ICON_GREEN.png" alt="Search" class="h-4">
+      <input
+        class="w-full bg-transparent rounded px-2 text-green focus:border-none outline-none"
+        value="{{query.age}}"
+        type="text"
+        name="age"
+        id=""
+        placeholder="Edad"
+        autocomplete="off"
+      />
+    </div>
+    <div class="bg-brown w-11/12 rounded-full px-2 my-3 flex items-center">
+      <img src="/img/SEARCH_ICON_GREEN.png" alt="Search" class="h-4">
+      <input
+        class="w-full bg-transparent rounded px-2 text-green focus:border-none outline-none"
+        value="{{query.sex}}"
+        type="text"
+        name="sex"
+        id=""
+        placeholder="Sexo"
+        autocomplete="off"
+      />
+    </div>
+    <div class="bg-brown w-11/12 rounded-full px-2 my-3 flex items-center">
+      <img src="/img/SEARCH_ICON_GREEN.png" alt="Search" class="h-4">
+      <input
+        class="w-full bg-transparent rounded px-2 text-green focus:border-none outline-none"
+        value="{{query.location}}"
+        type="text"
+        name="location"
+        id=""
+        placeholder="Localización"
+        autocomplete="off"
+      />
+    </div>
+    <div class="bg-brown w-11/12 rounded-full px-2 my-3 flex items-center">
+      <img src="/img/SEARCH_ICON_GREEN.png" alt="Search" class="h-4">
+      <input
+        class="w-full bg-transparent rounded px-2 text-green focus:border-none outline-none"
+        value="{{query.breed}}"
+        type="text"
+        name="breed"
+        id=""
+        placeholder="Raza"
+        autocomplete="off"
+      />
+    </div>
+        <div class="flex items-center w-11/12">
+          <button class="bg-red text-brown rounded-full w-1/2" type="submit">Filtrar</button>
+          <img class="h-4 ml-16" src="/img/CROSS-ICON.png" alt="Cross icon" name="close" onclick="Close(this)">
+        </div>
+  </div>
+</form>
+
+<script>
+  let list = document.getElementById('filtersMenu')
+    function Menu(e) {
+      list.classList.remove('top-[-400px]');
+    }
+    function Close(e) {
+      list.classList.add('top-[-400px]');
+    }
+ </script>

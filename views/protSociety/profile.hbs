@@ -9,7 +9,7 @@
     <div class="h-10"></div>
     <div class="flex h-10 items-center justify-end">
 
-      <a href="/profile/{{currentProtSociety.id}}/edit">
+      <a href="/profile/edit">
         <div class="flex h-7 w-28 items-center rounded-l-full bg-red pl-3">
           <img
             class="mr-2 h-3/5 w-auto"
@@ -53,10 +53,6 @@
       </a>
     </div>
   </div>
-
-  {{! <div class="flex items-center justify-center">
-    <img class="absolute mt-24 w-1/6" src="/img/DOG.png" alt="Dog Logo" />
-  </div> }}
 
   <div class="absolute mt-8 w-screen">
     <h1
@@ -121,28 +117,6 @@
       <p>{{protSociety.location}}</p>
     </div>
 
-    {{!-- <div class="mt-10 flex justify-evenly">
-      <a
-        class="font-base mt-1 w-3/12 rounded-full bg-brown px-3 py-1 text-center font-poppins text-sm text-green"
-        href="/pets/new"
-      >
-        <img class="mr-2 h-auto w-4" src="/img/PLUS_ICON_GREEN.png" alt="" />
-      </a>
-      <p class="text-brown">Nuevo animalito</p>
-      <a
-        class="font-base mt-1 w-3/12 rounded-full bg-brown px-3 py-1 text-center font-poppins text-sm text-green"
-        href="/profile/{{protSociety.id}}/edit"
-      >
-        <img class="mr-2 h-auto w-4" src="/img/EDIT_ICON_GREEN.png" alt="" />
-        Editar perfil</a>
-      <a
-        class="font-base mt-1 w-3/12 rounded-full bg-brown px-3 py-1 text-center font-poppins text-sm text-green"
-        href="/pets"
-      >
-        <img class="mr-2 h-auto w-4" src="/img/ADOPTED_ICON_GREEN.png" alt="" />
-        Consultar listado</a>
-    </div> --}}
-
     <a
       class="font-base mx-auto mt-10 flex w-6/12 items-center justify-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-sm text-green"
       href="{{protSociety.website}}"
@@ -151,6 +125,13 @@
       <img class="mr-2 h-auto w-4" src="/img/WEB-ICON_GREEN.svg" alt="" />
       Visitar web</a>
   </div>
+    {{!-- <a
+      class="font-base mx-auto mt-10 flex w-6/12 items-center justify-center rounded-full bg-red px-3 py-1 text-center font-poppins text-sm text-brown"
+      href=""
+    >
+      <img class="mr-2 h-auto w-4" src="/img/CROSS_ICON.png" alt="" />
+      Cerrar sesión</a>
+  </div> --}}
 
   <div class="mt-4 h-screen rounded-t-3xl bg-green"></div>
 

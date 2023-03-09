@@ -64,7 +64,7 @@ module.exports.doLogin = (req, res, next) => {
 }
 
 module.exports.profile = (req, res, next) => {
-  ProtSociety.findById(req.params.id)
+  ProtSociety.findById(req.protSociety.id)
     .then((protSociety) => {
       res.render('protSociety/profile', { protSociety })
     })
@@ -72,7 +72,7 @@ module.exports.profile = (req, res, next) => {
 }
 
 module.exports.edit = (req, res, next) => {
-  ProtSociety.findById(req.params.id)
+  ProtSociety.findById(req.protSociety.id)
     .then((protSociety) => {
       res.render('protSociety/editProfile', { protSociety })
     })
@@ -91,7 +91,7 @@ module.exports.doEdit = (req, res, next) => {
 
   req.protSociety.save()
     .then((protSociety) => {
-      res.redirect(`/profile/${protSociety.id}`)
+      res.redirect(`/profile`)
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {

@@ -16,9 +16,9 @@ router.post('/protSociety', protSocietyController.doCreate)
 router.get('/login', protSocietyController.login)
 router.post('/login', protSocietyController.doLogin)
 
-router.get('/profile/:id', secure.isAuthenticated, protSocietyController.profile)
-router.get('/profile/:id/edit', secure.isAuthenticated, protSocietyController.edit)
-router.post('/profile/:id', secure.isAuthenticated, protSocietyController.doEdit)
+router.get('/profile', secure.isAuthenticated, protSocietyController.profile)
+router.get('/profile/edit', secure.isAuthenticated, protSocietyController.edit)
+router.post('/profile', secure.isAuthenticated, protSocietyController.doEdit)
 
 router.get('/pets', petsController.list)
 router.get('/pets/new', secure.isAuthenticated, petsController.create)
