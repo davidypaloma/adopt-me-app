@@ -1,79 +1,241 @@
-<h1>{{pet.name}}</h1>
+{{> backgroundSmall}}
+<div class="mt-28 h-screen rounded-t-3xl bg-green">
+  <form class="w-full max-w-sm" action="/pets/{{petId}}" method="POST">
 
-<div>
-  <form action="/pets/{{pet.id}}" method="POST">
-    <div>
-      <label for="name">Nombre</label>
-      <input name="name" type="text" id="name" value="{{pet.name}}" />
+    <div class="flex-column relative flex justify-center">
+      <div
+        id="modal-url"
+        class="absolute bottom-20 z-10 hidden h-8 w-10/12 items-center justify-start rounded-full bg-brown px-1 py-1 font-poppins text-sm font-medium text-green opacity-90"
+      >
+        <div class="absolute top-0 right-0 -mt-4 flex gap-2">
+          <button
+            onclick="onCrossClick()"
+            type="button"
+            class="flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-white"
+          >
+            <span class="fa fa-times text-red"></span>
+          </button>
+          <button
+            onclick="onCheckClick()"
+            type="button"
+            class="flex h-[2rem] w-[2rem] items-center justify-center rounded-full bg-white"
+          >
+            <span class="fa fa-check text-green"></span>
+          </button>
+        </div>
+        <input
+          class="w-11/12 bg-transparent placeholder-green focus:outline-none"
+          name="image"
+          type="text"
+          id="image"
+          placeholder="Escribe la url de tu imagen"
+          value="{{pet.image}}"
+        />
+      </div>
+      <div
+        class="mt-11 flex h-52 w-72 items-center justify-center rounded-[30px] border-[12px] border-brown"
+      >
+        <div>
+          <img
+            id="protSocietyImage"
+            class="h-40 w-60 rounded-2xl object-cover object-top"
+            src="{{pet.image}}"
+            alt="foto de {{pet.image}}",
+          />
+          <button
+            onclick="onCameraClick()"
+            type="button"
+            class="absolute -bottom-3 right-10 flex h-[2rem] w-[2.5rem] items-center justify-center rounded-[10px] bg-white"
+          >
+            <span class="fa fa-camera text-green"></span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <label for="image">Imagen</label>
-      <input name="image" type="text" id="image" value="{{pet.image}}" />
+    <div
+      class="mt-3 flex h-8 items-center justify-center text-center font-lobster text-xl uppercase text-brown"
+    >
+      <p>{{petName}}</p>
     </div>
 
+    <div class="flex justify-center">
+      <div class="grid w-10/12 grid-cols-2 gap-4">
+        <div class="h-12">
+          <div
+            class="flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown {{#if errors.name}}border-b-rose-300 text-sm block{{/if}}"
+          >
+            <input
+              class="w-11/12 bg-transparent text-start placeholder-brown placeholder:opacity-50 focus:outline-none"
+              name="name"
+              type="text"
+              id="name"
+              placeholder="Nombre"
+              value="{{pet.name}}"
+              {{!-- required --}}
+              autocomplete="off"
+              onclick="this.select()"
+            />
+          </div>
+          {{#if errors.name}}
+            <p class="ml-1 text-xs text-rose-300 ">*Campo obligatorio</p>
+          {{/if}}
+        </div>
 
-    <div>
-      <label for="class">Clase</label>
-      <input name="class" type="text" id="class" value="{{pet.class}}" />
+        <div class="h-12">
+          <div
+            class="flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown {{#if errors.class}}border-b-rose-300 text-sm block{{/if}}"
+          >
+            <input
+              class="bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+              name="class"
+              type="text"
+              id="class"
+              placeholder="¿Perro, gato, dinosaurio?"
+              value="{{pet.class}}"
+              {{!-- required --}}
+              autocomplete="off"
+              onclick="this.select()"
+            />
+          </div>
+          {{#if errors.class}}
+            <p class="ml-1 text-xs text-rose-300 ">*Campo obligatorio</p>
+          {{/if}}
+        </div>
+      
+        <div class="h-12">
+          <div
+            class="flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown {{#if errors.age}}border-b-rose-300 text-sm block{{/if}}"
+          >
+            <input
+              class="bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+              name="age"
+              type="text"
+              id="age"
+              placeholder="Edad"
+              value="{{pet.age}}"
+              {{!-- required --}}
+              autocomplete="off"
+              onclick="this.select()"
+            />
+          </div>
+          {{#if errors.age}}
+            <p class="ml-1 text-xs text-rose-300 ">*Campo obligatorio</p>
+          {{/if}}
+        </div>
+
+        <div class="h-12">
+          <div
+            class="flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown {{#if errors.sex}}border-b-rose-300 text-sm block{{/if}}"
+          >
+            <input
+              class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+              name="sex"
+              type="text"
+              id="sex"
+              placeholder="Sexo"
+              value="{{pet.sex}}"
+              {{!-- required --}}
+              autocomplete="off"
+              onclick="this.select()"
+            />
+          </div>
+          {{#if errors.sex}}
+            <p class="ml-1 text-xs text-rose-300 ">*Campo obligatorio</p>
+          {{/if}}
+        </div>
+
+        <div class="h-12">
+          <div
+            class="flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown {{#if errors.energyLevel}}border-b-rose-300 text-sm block{{/if}}"
+          >
+            <span class="fa fa-battery-three-quarters text-brown mr-1"></span>
+            <input
+              class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+              name="energyLevel"
+              type="text"
+              id="energyLevel"
+              placeholder="Alta, media, baja"
+              value="{{pet.energyLevel}}"
+              {{!-- required --}}
+              autocomplete="off"
+              onclick="this.select()"
+            />
+          </div>
+          {{#if errors.energyLevel}}
+            <p class="ml-1 text-xs text-rose-300 ">*Campo obligatorio</p>
+          {{/if}}
+        </div>
+
+        <div class="h-12">
+          <div
+            class="flex items-center justify-start border-b border-brown px-1 py-1 text-sm font-medium text-brown {{#if errors.breed}}border-b-rose-300 text-sm block{{/if}}"
+          >
+            <input
+              class="w-11/12 bg-transparent placeholder-brown placeholder:opacity-50 focus:outline-none"
+              name="breed"
+              type="text"
+              id="breed"
+              placeholder="Raza"
+              value="{{pet.breed}}"
+              {{!-- required --}}
+              autocomplete="off"
+              onclick="this.select()"
+            />
+          </div>
+          {{#if errors.breed}}
+            <p class="ml-1 text-xs text-rose-300 ">*Campo obligatorio</p>
+          {{/if}}
+        </div>
+      </div>
     </div>
 
-    <div>
-      <label for="age">Edad</label>
-      <input name="age" type="text" id="age" value="{{pet.age}}" />
+    <div class="mt-4 flex justify-center">
+      <textarea
+        name="description"
+        placeholder="Escribe la historia de este peludito"
+        rows="4"
+        cols="38"
+        class="w-80 rounded-xl bg-brown bg-opacity-50 p-2 text-start text-base text-brown placeholder-brown focus:outline-none {{#if errors.description}}border-b-rose-300 text-sm block{{/if}}"
+        {{!-- required --}}
+        autocomplete="off"
+        onclick="this.select()"
+      >{{pet.description}}</textarea>
     </div>
+    {{#if errors.description}}
+      <p class="ml-8 text-xs text-rose-300 ">*Campo obligatorio</p>
+    {{/if}}
 
-    <div>
-      <label for="sex">Sexo</label>
-      <input name="sex" type="text" id="sex" value="{{pet.sex}}" />
+    <div class="mt-4 flex justify-center">
+      <button
+        class="h-18 w-6/12 rounded-full bg-brown px-3 py-1 font-medium text-green"
+        type="submit"
+      >
+        Guardar
+      </button>
     </div>
-
-    <div>
-      <label for="breed">Raza</label>
-      <input name="breed" type="text" id="breed" value="{{pet.breed}}" />
-    </div>
-
-    <div>
-      <label for="energyLevel">Nivel de energia</label>
-      <input
-        name="energyLevel"
-        type="text"
-        id="energyLevel"
-        value="{{pet.energyLevel}}"
-      />
-    </div>
-
-    <div>
-      <label for="isAdopted">Estado de adopción</label>
-      <input
-        name="isAdopted"
-        type="text"
-        id="isAdopted"
-        value="{{pet.isAdopted}}"
-      />
-    </div>
-
-    <div>
-      <label for="description">Descripción</label>
-      <textarea id="description" name="description" rows="5" cols="22">
-        {{pet.description}}
-      </textarea>
-    </div>
-{{!-- 
-    <div>
-      <label for="protSociety">Protectora</label>
-      <input
-        name="protSociety"
-        type="text"
-        id="protSociety"
-        value="{{pet.protSociety}}"
-      />
-    </div> --}}
-
-    <button type="submit">Editar</button>
   </form>
-</div>
 
-<form>
-  <input type="button" value="Go back!" onclick="history.back()" />
-</form>
+  <script lang="js">
+    function onCameraClick() { 
+      const imageUrlInput = document.querySelector('#modal-url')
+      imageUrlInput.classList.remove('hidden') 
+      imageUrlInput.classList.add('flex')
+    } 
+
+    function onCrossClick() { 
+      const imageUrlInput = document.querySelector('#modal-url') 
+      imageUrlInput.classList.add('hidden')
+      imageUrlInput.classList.remove('flex') 
+    }
+
+    function onCheckClick() { 
+      const imageUrlInput = document.querySelector('#modal-url') 
+      const protSocietyImage = document.querySelector('#protSocietyImage') 
+      const imageInputValue = document.querySelector('#modal-url input').value
+      imageUrlInput.classList.add('hidden') 
+      imageUrlInput.classList.remove('flex')
+      protSocietyImage.src = imageInputValue 
+    }
+  </script>
+</div>

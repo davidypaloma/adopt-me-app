@@ -15,7 +15,7 @@ module.exports.session = session({
   },
   store: MongoStore.create({
     mongoUrl: MONGODB_URI,
-    ttl: 14 * 24 * 60 * 60 //14 días
+    ttl: 1 * 24 * 60 * 60 //1 días
   })
 })
 

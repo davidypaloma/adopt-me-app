@@ -63,6 +63,7 @@
             value="{{protSociety.name}}"
             autocomplete="off"
             placeholder="Nombre" 
+            onclick="this.select()"
           />
         </div>
         {{#if errors.name}}
@@ -72,7 +73,7 @@
 
       <div class="h-14 mt-3">
         <div
-          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.email}}border-b-rose-300  text-sm  block{{/if}}"
+          class="ml-7 flex w-10/12 items-center justify-start border-b border-brown px-1 py-1 font-poppins text-sm font-medium text-brown {{#if errors.email}}border-b-rose-300  text-sm block{{/if}}"
         >
           <img
             class="mr-2 h-auto w-4"
@@ -86,6 +87,7 @@
             id="email"
             value="{{protSociety.email}}"
             placeholder="Email"
+            onclick="this.select()"
           />
         </div>
         {{#if errors.email}}
@@ -109,6 +111,7 @@
             id="location"
             value="{{protSociety.location}}"
             placeholder="Localización" 
+            onclick="this.select()"
           />
         </div>
         {{#if errors.location}}
@@ -132,6 +135,7 @@
             id="website"
             value="{{protSociety.website}}"
             placeholder="Página Web"
+            onclick="this.select()"
           />
         </div>
       </div>
@@ -152,6 +156,7 @@
             id="password"
             value="{{protSociety.password}}"
             placeholder="Contraseña" 
+            onclick="this.select()"
           />
         </div> 
         {{#if errors.password}}

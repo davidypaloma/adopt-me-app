@@ -49,15 +49,24 @@ module.exports.create = ((req, res, next) => {
 })
 
 module.exports.doCreate = ((req, res, next) => {
-  req.body.protSociety = req.protSociety.id
-  Pet.create(req.body)
+  const petData = {
+    name: req.body.name,
+    image: req.body.image,
+    class: req.body.class,
+    age: req.body.age,
+    sex: req.body.sex,
+    breed: req.body.breed,
+    energyLevel: req.body.energyLevel,
+    isAdopted: req.body.isAdopted,
+    description: req.body.description,
+  }
+  Pet.create(petData)
     .then((pet) => {
-      pet.protSociety = req.body.protSociety
       res.redirect(`/pets/${pet.id}`)
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.render('pets/newPet', { errors: error.errors, pet: req.body })
+        res.render('pets/newPet', { errors: error.errors, pet: petData })
       } else {
         next(error)
       }
@@ -67,20 +76,43 @@ module.exports.doCreate = ((req, res, next) => {
 module.exports.update = ((req, res, next) => {
   Pet.findById(req.params.id)
     .then((pet) => {
-      res.render('pets/updatePet', { pet })
+      res.render('pets/updatePet', { pet, petName: pet.name, petId: req.params.id, })
     })
+    .catch(next)
 })
 
 module.exports.doUpdate = ((req, res, next) => {
-  Pet.findByIdAndUpdate(req.params.id, req.body)
+  const petData = {
+    name: req.body.name,
+    image: req.body.image,
+    class: req.body.class,
+    age: req.body.age,
+    sex: req.body.sex,
+    breed: req.body.breed,
+    energyLevel: req.body.energyLevel,
+    isAdopted: req.body.isAdopted,
+    description: req.body.description,
+  }
+
+  Pet.findById(req.params.id)
     .then((pet) => {
-      res.redirect(`/pets/${pet.id}`)
+      const petName = pet.name
+      Object.assign(pet, petData)
+      pet.save()
+        .then((pet) => {
+          console.log('save');
+          res.redirect(`/pets/${pet.id}`)
+        })
+        .catch(error => {
+          console.log('err');
+          if (error instanceof mongoose.Error.ValidationError) {
+            console.log('moon errr', error);
+            res.render('pets/updatePet', { errors: error.errors, petId: req.params.id, pet: petData, petName })
+          } else {
+            console.log('hola');
+            next(error)
+          }
+        })
     })
-    .catch(error => {
-      if (error instanceof mongoose.Error.ValidationError) {
-        res.render('pets/updatePet', { errors: error.errors, pet: req.body })
-      } else {
-        next(error)
-      }
-    })
+    .catch(next)
 })

@@ -13,7 +13,7 @@
         <div class="flex h-7 w-28 items-center rounded-l-full bg-red pl-3">
           <img
             class="mr-2 h-3/5 w-auto"
-            src="/img/USER_ICON.png"
+            src="/img/EDIT_ICON_GREEN.png"
             alt="user icon"
           />
           <p>Editar</p>
@@ -61,7 +61,7 @@
 
     <div class="flex justify-center">
       <div
-        class="flex h-[10rem] w-[10rem] items-center justify-center rounded-full bg-brown "
+        class="flex h-[10rem] w-[10rem] items-center justify-center rounded-full bg-brown"
       >
         <div
           class="flex h-[9rem] w-[9rem] items-center justify-center rounded-full border-[6px] border-green"
@@ -79,7 +79,7 @@
       class="font poppins align-start ml-6 mt-1 flex w-64 text-2xl text-brown"
     >Nombre</p>
     <div
-      class="font-base mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-xl text-green"
+      class="font-base mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-lg text-green"
     >
       <img
         class="mr-2 h-5 w-5"
@@ -93,7 +93,7 @@
       class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
     >Email</p>
     <div
-      class="font-base mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-xl text-green"
+      class="font-base mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-lg text-green"
     >
       <img
         class="mr-2 h-4 w-5"
@@ -107,7 +107,7 @@
       class="font poppins align-start ml-6 mt-3 flex w-64 text-2xl text-brown"
     >Localización</p>
     <div
-      class="font-base mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-xl text-green"
+      class="font-base mt-1 ml-3 flex w-11/12 items-center justify-start rounded-full bg-brown px-3 py-1 font-poppins text-lg text-green"
     >
       <img
         class="mr-2 h-5 w-4"
@@ -117,21 +117,22 @@
       <p>{{protSociety.location}}</p>
     </div>
 
-    <a
-      class="font-base mx-auto mt-10 flex w-6/12 items-center justify-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-sm text-green"
-      href="{{protSociety.website}}"
-      target="_blank"
-    >
-      <img class="mr-2 h-auto w-4" src="/img/WEB-ICON_GREEN.svg" alt="" />
-      Visitar web</a>
+    <div class="flex">
+      <a
+        class="font-base mx-auto mt-10 flex w-5/12 items-center justify-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-sm text-green"
+        href="{{protSociety.website}}"
+        target="_blank"
+      >
+        <img class="mr-2 h-auto w-4" src="/img/WEB-ICON_GREEN.svg" alt="" />
+        Visitar web</a>
+      <a
+        class="font-base mx-auto mt-10 flex w-5/12 items-center justify-center rounded-full bg-red px-3 py-1 text-center font-poppins text-sm text-brown"
+        href="/logout"
+      >
+        <img class="mr-2 h-auto w-2" src="/img/CROSS-ICON.png" alt="" />
+        Cerrar sesión</a>
+    </div>
   </div>
-    {{!-- <a
-      class="font-base mx-auto mt-10 flex w-6/12 items-center justify-center rounded-full bg-red px-3 py-1 text-center font-poppins text-sm text-brown"
-      href=""
-    >
-      <img class="mr-2 h-auto w-4" src="/img/CROSS_ICON.png" alt="" />
-      Cerrar sesión</a>
-  </div> --}}
 
   <div class="mt-4 h-screen rounded-t-3xl bg-green"></div>
 

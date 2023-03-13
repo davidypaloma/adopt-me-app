@@ -7,17 +7,25 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
-
+  const protSocietyData = {
+    name: req.body.name,
+    image: req.body.image,
+    location: req.body.location,
+    email: req.body.email,
+    phone: req.body.phone,
+    website: req.body.website,
+    password: req.body.password,
+  }
   function renderWithErrors(errors) {
-    res.render('protSociety/newProtSociety', { errors, protSociety: req.body })
+    res.render('protSociety/newProtSociety', { errors, protSociety: protSocietyData })
   }
 
   ProtSociety.findOne({ email: req.body.email })
     .then(protSociety => {
       if (protSociety) {
-        renderWithErrors({email: 'email ya registrado'})
+        renderWithErrors({ email: 'email ya registrado' })
       } else {
-        return ProtSociety.create(req.body)
+        return ProtSociety.create(protSocietyData)
           .then(() => {
             res.redirect('/login')
           })
@@ -33,6 +41,7 @@ module.exports.doCreate = (req, res, next) => {
 }
 
 module.exports.login = (req, res, next) => {
+  console.log('error---------------', req.protSociety)
   if (req.protSociety) {
     res.redirect('/pets')
   } else {
@@ -43,6 +52,15 @@ module.exports.login = (req, res, next) => {
 const sessions = {}
 
 module.exports.doLogin = (req, res, next) => {
+  const protSocietyData = {
+    name: req.body.name,
+    image: req.body.image,
+    location: req.body.location,
+    email: req.body.email,
+    phone: req.body.phone,
+    website: req.body.website,
+    password: req.body.password,
+  }
   ProtSociety.findOne({ email: req.body.email })
     .then((protSociety) => {
       return bcrypt.compare(req.body.password, protSociety.password)
@@ -56,7 +74,7 @@ module.exports.doLogin = (req, res, next) => {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: req.body })
+        res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: protSocietyData })
       } else {
         next(error)
       }
@@ -80,14 +98,24 @@ module.exports.edit = (req, res, next) => {
 }
 
 module.exports.doEdit = (req, res, next) => {
-  if (!req.body.password) {
-    delete req.body.password
-  }
-  if (!req.body.name) {
-    delete req.body.name
+  const protSocietyData = {
+    name: req.body.name,
+    image: req.body.image,
+    location: req.body.location,
+    email: req.body.email,
+    phone: req.body.phone,
+    website: req.body.website,
+    password: req.body.password,
   }
 
-  Object.assign(req.protSociety, req.body)
+  if (!req.body.password) {
+    delete protSocietyData.password
+  }
+  if (!req.body.name) {
+    delete protSocietyData.name
+  }
+
+  Object.assign(req.protSociety, protSocietyData)
 
   req.protSociety.save()
     .then((protSociety) => {
@@ -95,9 +123,18 @@ module.exports.doEdit = (req, res, next) => {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.render('protSociety/editProfile', { errors: error.errors, protSociety: req.body })
+        res.render('protSociety/editProfile', { errors: error.errors, protSociety: protSocietyData })
       } else {
         next(error)
       }
     })
+}
+
+module.exports.logout = (req, res, next) => {
+  req.session.destroy(function (err) {
+    req.session = null;
+    res.clearCookie('connect.sid')
+    res.clearCookie('sessionid')
+    res.redirect('/login');
+  });
 }

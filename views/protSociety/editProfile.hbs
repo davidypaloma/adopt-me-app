@@ -71,7 +71,7 @@
             </button>
           </div>
           <img class="mx-2 h-auto w-4" src="/img/USER_ICON_GREEN.png" alt="user icon">
-          <input class="w-11/12 bg-transparent focus:outline-none placeholder-green" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen">
+          <input class="w-11/12 bg-transparent focus:outline-none placeholder-green" name="image" type="text" id="image" placeholder="Escribe la url de tu imagen" value="{{currentProtSociety.image}}">
         </div>
         <div
           class="flex h-[9rem] w-[9rem] items-center justify-center rounded-full border-[6px] border-brown relative"
@@ -81,7 +81,7 @@
               id="protSocietyImage" 
               class="h-[7.5rem] w-[7.5rem] rounded-full object-cover object-top"
               src="{{currentProtSociety.image}}"
-              alt="{{currentProtSociety.name}} image"
+              alt="{{currentProtSociety.name}} logo"
             /> 
             <button onclick="onCameraClick()" type="button" class="flex justify-center items-center h-[2.5rem] w-[2.5rem] rounded-full absolute bg-white bottom-0 right-0">
               <span class="fa fa-camera text-green"></span>
@@ -120,11 +120,12 @@
             alt="user icon"
           />
           <input
-            class="w-11/12 bg-transparent focus:outline-none"
+            class="w-11/12 bg-transparent focus:outline-none select-all"
             name="email"
             type="email"
             id="email"
             value="{{currentProtSociety.email}}"
+            onclick="this.select()"
           />
         </div>
         {{#if errors.email}}
@@ -142,11 +143,12 @@
             alt="user icon"
           />
           <input
-            class="w-11/12 bg-transparent focus:outline-none"
+            class="w-11/12 bg-transparent focus:outline-none select-all"
             name="location"
             type="text"
             id="location"
             value="{{currentProtSociety.location}}"
+            onclick="this.select()"
           />
         </div>
         {{#if errors.location}}
@@ -164,11 +166,12 @@
             alt="user icon"
           />
           <input
-            class="w-11/12 bg-transparent focus:outline-none"
+            class="w-11/12 bg-transparent focus:outline-none select-all"
             name="website"
             type="text"
             id="website"
             value="{{currentProtSociety.website}}"
+            onclick="this.select()"
           />
         </div>
       </div>
@@ -196,7 +199,7 @@
       </div>
 
       <button
-        class="mx-auto mt-5 block w-6/12 items-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-lg font-medium text-green"
+        class="mx-auto mt-5 block w-5/12 items-center rounded-full bg-brown px-3 py-1 text-center font-poppins text-lg font-medium text-green"
         type="submit"
       >Guardar</button>
     </form>

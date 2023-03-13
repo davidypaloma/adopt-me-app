@@ -15,6 +15,7 @@ router.post('/protSociety', protSocietyController.doCreate)
 
 router.get('/login', protSocietyController.login)
 router.post('/login', protSocietyController.doLogin)
+router.get('/logout', protSocietyController.logout)
 
 router.get('/profile', secure.isAuthenticated, protSocietyController.profile)
 router.get('/profile/edit', secure.isAuthenticated, protSocietyController.edit)

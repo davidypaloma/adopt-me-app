@@ -12,6 +12,7 @@ const petSchema = new Schema({
   },
   class: {
     type: String,
+    required: [true, "El tipo de la animal es obligatorio"]
   },
   age: {
     type: String,
