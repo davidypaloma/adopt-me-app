@@ -41,7 +41,6 @@ module.exports.doCreate = (req, res, next) => {
 }
 
 module.exports.login = (req, res, next) => {
-  console.log('error---------------', req.protSociety)
   if (req.protSociety) {
     res.redirect('/pets')
   } else {
@@ -53,12 +52,7 @@ const sessions = {}
 
 module.exports.doLogin = (req, res, next) => {
   const protSocietyData = {
-    name: req.body.name,
-    image: req.body.image,
-    location: req.body.location,
     email: req.body.email,
-    phone: req.body.phone,
-    website: req.body.website,
     password: req.body.password,
   }
   ProtSociety.findOne({ email: req.body.email })
@@ -72,13 +66,7 @@ module.exports.doLogin = (req, res, next) => {
           }
         })
     })
-    .catch(error => {
-      if (error instanceof mongoose.Error.ValidationError) {
-        res.render('protSociety/newProtSociety', { errors: error.errors, protSociety: protSocietyData })
-      } else {
-        next(error)
-      }
-    })
+    .catch(next)
 }
 
 module.exports.profile = (req, res, next) => {

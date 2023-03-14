@@ -14,7 +14,7 @@
       {{#if currentProtSociety.id}}
         <a href="/pets/{{pet.id}}/update">
           <div class="bg-red w-28 h-7 rounded-l-full flex items-center pl-3">
-          <img class="h-3/5 w-auto mr-2" src="/img/EDIT_ICON_GREEN.png" alt="user icon">
+          <img class="h-3/5 w-auto mr-2" src="/img/EDIT_ICON_BROWN.png" alt="user icon">
           <p>Editar</p>
           </div>
         </a>
@@ -78,8 +78,8 @@
           <p>{{pet.protSociety.location}}</p>
         </div>
         <div class="h-8 text-green bg-brown rounded-full text-lg flex justify-center items-center font-lobster relative">
-          <img class="h-1/2 mr-2" src="/img/MAIL_ICON_GREEN.png" alt="Mail icon">
-          <a href="mailto:{{currentProtSociety.email}}"><p>{{currentProtSociety.name}}</p></a> 
+          <img class="h-1/2 mr-2" src="/img/WEB-ICON_GREEN.svg" alt="Mail icon">
+          <a href="{{pet.protSociety.website}}" target="_blank"><p>{{pet.protSociety.name}}</p></a> 
         <div class="fa fa-hand-pointer-o absolute right-2 bottom-0 -mb-4 text-brown bg-green rounded-full p-1"></div>
         </div>
       </div>

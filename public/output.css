@@ -544,6 +544,14 @@ video {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
 .-mb-4 {
   margin-bottom: -1rem;
 }
@@ -861,6 +869,9 @@ video {
 }
 .w-2 {
   width: 0.5rem;
+}
+.w-4\/12 {
+  width: 33.333333%;
 }
 .max-w-sm {
   max-width: 24rem;

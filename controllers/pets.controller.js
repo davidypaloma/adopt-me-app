@@ -10,6 +10,10 @@ module.exports.list = async (req, res, next) => {
     criteria.name = new RegExp(req.query.name.trim(), "i")
   }
 
+  if (req.query.age) {
+    criteria.age = new RegExp(req.query.age.trim(), "i")
+  }
+
   if (req.query.class) {
     criteria.class = new RegExp(req.query.class.trim(), "i")
   }
@@ -25,6 +29,9 @@ module.exports.list = async (req, res, next) => {
   if (req.query.location) {
     const protsocieties = await ProtSociety.find({ location: new RegExp(req.query.location, "i") })
     criteria.protSociety = { $in: protsocieties.map(x => x._id) }
+  }
+  if (req.protSociety) {
+    criteria.protSociety = req.protSociety.id
   }
 
   Pet.find(criteria)
@@ -62,6 +69,7 @@ module.exports.doCreate = ((req, res, next) => {
   }
   Pet.create(petData)
     .then((pet) => {
+      pet.protSociety = req.protSociety.id
       res.redirect(`/pets/${pet.id}`)
     })
     .catch(error => {
@@ -100,16 +108,12 @@ module.exports.doUpdate = ((req, res, next) => {
       Object.assign(pet, petData)
       pet.save()
         .then((pet) => {
-          console.log('save');
           res.redirect(`/pets/${pet.id}`)
         })
         .catch(error => {
-          console.log('err');
           if (error instanceof mongoose.Error.ValidationError) {
-            console.log('moon errr', error);
             res.render('pets/updatePet', { errors: error.errors, petId: req.params.id, pet: petData, petName })
           } else {
-            console.log('hola');
             next(error)
           }
         })
